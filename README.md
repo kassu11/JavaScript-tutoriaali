@@ -16,7 +16,7 @@
 <br>
 
 <details open>
-<summary>Tehtävä 0 | Opastus</summary>
+<summary style="font-size: 1.5em">Tehtävä 0 | Opastus</summary>
 
 Tässä on vähän aloitus koodia jotta pääset alkuun, ja näet miten asiat toimii
 
@@ -66,7 +66,7 @@ lukuB on nyt15
 <br>
 
 <details open>
-<summary>Tehtävä 1 | Hei maailma</summary>
+<summary style="font-size: 1.5em">Tehtävä 1 | Hei maailma</summary>
 
 - Tee `2` oliota, tallenna toiseen `nimesi` ja toiseen `ikäsi`
 - Näytä konsoolissa paljon `ikä olio` ja `54` on yhteensä
@@ -150,7 +150,7 @@ console.log(`Hei, olen ${ika} vuotta vanha ja nimeni on ${nimi}!`); // tää on 
 <br>
 
 <details open>
-<summary>Tehtävä 2 | Toistoa ja pituutta</summary>
+<summary style="font-size: 1.5em">Tehtävä 2 | Toistoa ja pituutta</summary>
 
 Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
 
