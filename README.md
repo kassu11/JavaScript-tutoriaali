@@ -44,6 +44,8 @@ console.log("lukuB on nyt" + lukuA) // "+" toimii myös, mutta ei luo väliä
 lukuC = 4;  // Jos yrität muuttaa "lukuC", tulee error, koska olio luotiin "const" termillä, joka estää muutoksen
 ```
 
+<br>
+
 Odotettu lopputulos
 
 ```js
@@ -54,5 +56,85 @@ lukuB on nyt15
 > Uncaught TypeError: Assignment to constant variable.
     at code.js:23
 ```
+
+</details>
+
+<details open>
+<summary>Tehtävä 1 | Hei maailma</summary>
+
+- Tee `2` oliota, toiseen tallenna `nimesä` ja toiseen `ikäsi`
+- Näytä konsoolissa paljon `ikä olio` ja `54` on yhteensä
+- Kirjoita konsooliin lause, käyttäen `2` edellistä oliota
+  - Hei, olen `ikä` vuotta vanha ja nimeni on `nimi`!
+
+<br>
+
+Odotettu lopputulos
+
+```js
+72
+Hei, olen 18 vuotta vanha ja nimeni on Kassu!
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit tehdä olion `const` tai `let` komennolla
+
+```js
+const uusiOlio = "olen tekstiä";
+let muutettavaOlio = "olen myös tekstiä";
+
+console.log(uusiOlio);
+console.log(muutettavaOlio);
+```
+
+<br>
+
+Odotettu lopputulos
+
+```js
+olen tekstiä
+olen myös tekstiä
+```
+
+<details>
+<summary>Vinkki 2</summary>
+
+- Voit yhdistää olitoita `+` tai `,` merkillä
+
+```js
+const olioA = "yksi";
+const olioB = "kaksi";
+const olioC = "kolme";
+
+console.log(olioA, olioB + olioC);
+```
+
+<br>
+
+Odotettu lopputulos
+
+```js
+yksi kaksikolme
+```
+
+</details>
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const nimi = "Kassu";
+const ika = 18;
+
+console.log(ika + 54);
+console.log("Hei, olen", ika, "vuotta vanha ja nimeni on", nimi + "!");
+console.log(`Hei, olen ${ika} vuotta vanha ja nimeni on ${nimi}!`); // tää on myös tapa sekottaa tekstiä olioitten kanssa
+```
+
+</details>
 
 </details>
