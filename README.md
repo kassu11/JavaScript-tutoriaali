@@ -11,6 +11,8 @@
   - Kannattaa silti katsoa `"malli" vastausta`, jos siitä oppisi jotain
 - Tehtävien lopussa on myös `vinkkejä` jos, olet jumissa
 
+---
+
 <br>
 
 <details open>
@@ -59,10 +61,14 @@ lukuB on nyt15
 
 </details>
 
+---
+
+<br>
+
 <details open>
 <summary>Tehtävä 1 | Hei maailma</summary>
 
-- Tee `2` oliota, toiseen tallenna `nimesä` ja toiseen `ikäsi`
+- Tee `2` oliota, tallenna toiseen `nimesi` ja toiseen `ikäsi`
 - Näytä konsoolissa paljon `ikä olio` ja `54` on yhteensä
 - Kirjoita konsooliin lause, käyttäen `2` edellistä oliota
   - Hei, olen `ikä` vuotta vanha ja nimeni on `nimi`!
@@ -138,3 +144,129 @@ console.log(`Hei, olen ${ika} vuotta vanha ja nimeni on ${nimi}!`); // tää on 
 </details>
 
 </details>
+
+---
+
+<br>
+
+<details open>
+<summary>Tehtävä 2 | Toistoa ja pituutta</summary>
+
+Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
+
+```js
+const viiva = "#".repeat(15); // toistaa merkin "#" 15 kertaa
+
+console.log(viiva);
+console.log("tämä viiva on", viiva.length, "merkkiä pitkä");
+console.log(viiva.repeat(2));
+
+console.log("\n") // Tämä tekee rivin vaihdon
+
+console.log("5 + 5 on", 5 + 5);
+console.log("8 - 3 on", 8 - 3);
+console.log("10 jaettuna 2 on", 10 / 2);
+console.log("5 kertaa 5 on", 5 * 5);
+console.log("2 potenssiin 3 on", 2 ** 3);
+console.log("42 jakojäännys on", 42 % 10, "jos se jaetaan 10");
+console.log("16 neliöjuuri on", Math.sqrt(16));
+
+console.log(viiva.repeat(2));
+// "\t" tekee tabulaattorin consoliin
+console.log("\t\ttekstii\n".repeat(5));
+```
+
+<br>
+
+Odotettu lopputulos
+
+```js
+###############
+tämä viiva on 15 merkkiä pitkä
+##############################
+
+5 + 5 on 10
+8 - 3 on 5
+10 jaettuna 2 on 5
+5 kertaa 5 on 25
+2 potenssiin 3 on 8
+42 jakojäännys on 2 jos se jaetaan 10
+16 neliöjuuri on 4
+##############################
+		tekstii
+		tekstii
+		tekstii
+		tekstii
+		tekstii
+```
+
+<br>
+
+- Tee `olio` johon voi tallennetaan `tekstiä`
+- Olion teksti kirjoitetaan konsooliin ja se saa alleviivauksen
+- Alleviivaus on tehty vaikka `#` merkistä
+  - Viiva on aina yhtäpitkä kun olio teksti
+
+<br>
+
+Odotettu lopputulos
+
+```js
+tää on teksti
+#############
+
+olen vielä pidempi teksti
+#########################
+
+olen vielä pidempi teksti !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#######################################################
+
+u
+#
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit käyttää `.length` komentoa jos haluat tietää tekstin pituuden
+
+<details>
+<summary>Vinkki 2</summary>
+
+- Käytä `.repeat()` komentoa, joka toistaa tekstin monta kertaa haluat
+
+```js
+console.log("e".repeat(5)) // Tekee 5 "e" kirjainta
+console.log("ha".repeat(8));
+```
+
+<br>
+
+Odotettu lopputulos
+
+```js
+eeeee
+hahahahahahahaha
+```
+
+</details>
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "teksti tulee tähän";
+
+console.log(teksti);
+console.log("#".repeat(teksti.length));
+```
+
+</details>
+
+</details>
+
+---
+
+<br>
