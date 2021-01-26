@@ -320,3 +320,68 @@ console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 4 | Neliö konsoliin
+
+- Tee konsoliin `neliö` käyttämällä `#` merkkiä
+- Neliö on `ontto sisältä` ja sen suhteet on `1/2`
+  - Eli vaikka neliö on `20 pitkä` ja `10 korkea`
+- Neliön `koko` määritetään `numerolla oliossa`
+- Neliön `ei` tarvitse `toimia alle 10` olevilla numeroilla
+- Tehtävässä saa käytetään yhtä `console.log()` komentoa
+
+<br>
+
+Esimerkki vastaus
+
+```js
+##############################
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+#                            #
+##############################
+
+##########
+#        #
+#        #
+#        #
+##########
+
+####################
+#                  #
+#                  #
+#                  #
+#                  #
+#                  #
+#                  #
+#                  #
+#                  #
+####################
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const nelionKoko = 20;
+const rivi = "#".repeat(nelionKoko) + "\n";
+const tyhjaRivi = "#" + " ".repeat(nelionKoko - 2) + "#\n";
+
+console.log(rivi + tyhjaRivi.repeat(nelionKoko / 2 - 2) + rivi);
+```
+
+</details>
