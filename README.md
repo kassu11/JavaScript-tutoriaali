@@ -261,3 +261,62 @@ console.log("#".repeat(teksti.length));
 ---
 
 <br>
+
+## Tehtävä 3 | Teksti boxi
+
+- Tee konsoliin tekstiboxi `#` merkistä joka `ympäröi tekstiä`
+- Teksti tallennetaan `olioon`, jotta sitä voi helposti muuttaa
+- Tekstin `päällä` ja `alla` on `rivin vaihto`
+- Tekstin `oikealla` ja `vasemmalla` on `2 väliä`
+- Kaikki tätä on `ympäröity #` merkeillä
+- Saat käyttää tähän tehtävään vaan yhtä `console.log()` komentoa
+
+<br>
+
+3 Esimerkki tulosta
+
+```js
+######################              |           ###########
+#                    #              |           #         #
+#  Moro olen teksti  #              |           #  lyhyt  #
+#                    #              |           #         #
+######################              |           ###########
+                                    |
+------------------------------------+----------------------
+
+###########################################################
+#                                                         #
+#  tosi pitkä teksti joka venyy ja laatikko tulee mukana  #
+#                                                         #
+###########################################################
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit tehdä rivin vaihdon `"\n"` tekstillä
+
+```js
+console.log("Rivi1\nRivi2\nRivi3");
+```
+
+```js
+Rivi1
+Rivi2
+Rivi3
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "Moro olen teksti"
+const tyhja = " ".repeat(teksti.length + 2);
+const viiva = "#".repeat(teksti.length + 6) + "\n";
+
+console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
+```
+
+</details>
