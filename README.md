@@ -17,7 +17,10 @@
 
 ## Tehtävä 0 | Opastus
 
-Tässä on vähän aloitus koodia jotta pääset alkuun, ja näet miten asiat toimii
+### Tehtävänanto
+
+- Tässä on vähän aloitus koodia jotta pääset alkuun, ja näet miten asiat toimii
+- Kopio koodi itsellesi ja leiki sillä vähän, kunnes tajuut miten se toimii
 
 ```js
 // Tämä on kommentti
@@ -47,7 +50,7 @@ lukuC = 4;  // Jos yrität muuttaa "lukuC", tulee error, koska olio luotiin "con
 
 <br>
 
-Odotettu lopputulos
+### Odotettu lopputulos
 
 ```js
 8
@@ -64,6 +67,8 @@ lukuB on nyt15
 
 ## Tehtävä 1 | Hei maailma
 
+### Tehtävänanto
+
 - Tee `2` oliota, tallenna toiseen `nimesi` ja toiseen `ikäsi`
 - Näytä konsoolissa paljon `ikä olio` ja `54` on yhteensä
 - Kirjoita konsooliin lause, käyttäen `2` edellistä oliota
@@ -71,7 +76,7 @@ lukuB on nyt15
 
 <br>
 
-Odotettu lopputulos
+### Odotettu lopputulos
 
 ```js
 72
@@ -195,6 +200,8 @@ tämä viiva on 15 merkkiä pitkä
 
 <br>
 
+### Tehtävänanto
+
 - Tee `olio` johon voi tallennetaan `tekstiä`
 - Olion teksti kirjoitetaan konsooliin ja se saa alleviivauksen
 - Alleviivaus on tehty vaikka `#` merkistä
@@ -202,7 +209,7 @@ tämä viiva on 15 merkkiä pitkä
 
 <br>
 
-Odotettu lopputulos
+### Odotettu lopputulos
 
 ```js
 tää on teksti
@@ -264,6 +271,8 @@ console.log("#".repeat(teksti.length));
 
 ## Tehtävä 3 | Teksti boxi
 
+### Tehtävänanto
+
 - Tee konsoliin tekstiboxi `#` merkistä joka `ympäröi tekstiä`
 - Teksti tallennetaan `olioon`, jotta sitä voi helposti muuttaa
 - Tekstin `päällä` ja `alla` on `rivin vaihto`
@@ -273,7 +282,7 @@ console.log("#".repeat(teksti.length));
 
 <br>
 
-3 Esimerkki tulosta
+### 3 Esimerkki tulosta
 
 ```js
 ######################              |           ###########
@@ -327,6 +336,8 @@ console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
 
 ## Tehtävä 4 | Neliö konsoliin
 
+### Tehtävänanto
+
 - Tee konsoliin `neliö` käyttämällä `#` merkkiä
 - Neliö on `ontto sisältä` ja sen suhteet on `1/2`
   - Eli neliö voisi olla `20 pitkä` ja `10 korkea`
@@ -337,7 +348,7 @@ console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
 
 <br>
 
-Esimerkki tulos
+### Esimerkki tulos
 
 ```js
 ##############################
@@ -476,6 +487,8 @@ Suorittaa koska 10 + 50 on 60
 
 <br>
 
+### Tehtävänanto
+
 - Tee sovellus joka palauttaa konsoliin `tietoa numerosta`
 - Sovellus kertoo onko numero `positiivinen` vai `negatiivinen`
 - Jos numero on nolla se sanoo `"Lukusi on 0"`
@@ -483,7 +496,7 @@ Suorittaa koska 10 + 50 on 60
 
 <br>
 
-Esimkerkki vastauksia
+### Esimkerkki vastauksia
 
 ```js
 
@@ -578,3 +591,4 @@ else console.log(`"${luku}" ei ole numero!`)
 ```
 
 </details>
+
