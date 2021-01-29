@@ -592,3 +592,238 @@ else console.log(`"${luku}" ei ole numero!`)
 
 </details>
 
+---
+
+<br>
+
+## Tehtävä 6 | Loopit ja taulut
+
+Materiaalia `while` & `for` loopista sekä tauluista
+
+```js
+console.log("ennen for looppia");
+
+// Tää on yksinkertaisin muoto for loopista
+  // Se koostuu 3 osasta
+  // Ensit luot olion
+  // sitten asetat if ehdon, joka kertoo miten kauan loop on voimassa
+    // Tämä ehto tarkistetaan joka looppi
+  // viimeinen osa sanoo mitä loop tekee joka kerta kun se suoritetaan
+    // nytten se lisää 1 numeroon, ja kun numero menee yli 4 se lopettaa
+
+for(let numero = 0; numero < 5; numero = numero + 1) {
+  console.log(numero);
+}
+
+console.log("for loopin jälkeen");
+
+// Sinun ei tarvitse laittaa kaikkia 3 osaa for looppin
+// kunhan aina laitat 2 ";" merkkiä
+
+let numero = 0;
+for(;numero < 3;) {
+  if(numero > 0) { // voit myös tietenkin laittaa if ja muita koodeja tänne sisälle
+    console.log(numero)
+  }
+  numero += 1; // tämä on sama kun sanoisi "numero = numero + 1"
+}
+
+console.log("#".repeat(30));
+
+// jos teet tuon tapaisen loopin voit käyttää while, joka ottaa vaan if ehdon sisälle
+
+let numero2 = 0;
+while(numero2 < 3) {
+  console.log(numero2);
+  numero2++; // tämä on sama kun sanoisi numero += 1
+}
+
+console.log("#".repeat(30))
+
+/* =====================================
+# Yleensä for looppeja käytetään       #
+# taulujen ja objectejan kanssa joten  #
+# opetan ne seuraavaksi                #
+# =================================== */
+
+// tallennetaan taulu olioon nänä arvot
+let taulu = [5, "kassu", 7, 1, "abc", 5, 4];
+
+console.log(taulu) // näet kaikki taulun arvot
+
+// voit lukea taulun arvoja, laittamalla rivi numeron loppuun näin
+console.log(taulu[0]) // eka arvo taulussa on "5"
+console.log(taulu[3]) // kolmas arvo on 1, koska numerot alkaa 0
+
+// voit saada näin tietää monta arvoa taulussa on
+console.log(taulu.length) // palauttaa 7
+// muista että pituudesta pitää vähentää 1, koska numerot alkaa 0, eikä 1
+console.log(taulu[taulu.length - 1]);
+
+console.log("#".repeat(30));
+
+// voit muuttaa taulun arvoja näin
+
+taulu[0] = "tekstii"; // nytten muutit 5 --> "tekstii"
+console.log(taulu);
+
+// voit laittaa uuden tiedon myös tauluun, jos siinä numerossa ei vielä ole mitään
+taulu[10] = 150 // taulu oli vaan 7 pitkä, mutta voit silti laittaa 10 indexiin arvon
+
+console.log(taulu); // huomaa että taulussa on nytten tyhjiä tiloja
+console.log(taulu[9]) // tyhjaa tilaa voi yrittää hakea, mutta siellä ei ole mitään
+
+// jos haluat lisätä uuden arvon tauluun, voit myös vaan käyttää push komentoa
+// tämä lisaa arvon aina taulun loppuun
+
+taulu.push("uusi arvo");
+// huomaa että push laita arvoa tyhjään kohtaan, vaan aina taulun perään
+console.log(taulu);
+
+console.log("#".repeat(30));
+
+// Tämä on yleisin for loop mitä tulet näkemään
+// i on yleensä lyhenne sanalle index
+// vetää läpi kaikki arvot taulussa
+for(let i = 0; i < taulu.length; i++) {
+  console.log(taulu[i]);
+}
+
+/* Ota huomioon että koska i on luotu for loopissa,
+ sitä ei voi käyttä sen ulkopuolella */
+console.log(i);
+```
+
+<br>
+
+Esimerkin lopputulos
+
+```js
+ennen for looppia
+0
+1
+2
+3
+4
+for loopin jälkeen
+1
+2
+##############################
+0
+1
+2
+##############################
+(7) [5, "kassu", 7, 1, "abc", 5, 4]
+5
+1
+7
+4
+##############################
+(7) ["tekstii", "kassu", 7, 1, "abc", 5, 4]
+(11) ["tekstii", "kassu", 7, 1, "abc", 5, 4, empty × 3, 150]
+undefined
+(12) ["tekstii", "kassu", 7, 1, "abc", 5, 4, empty × 3, 150, "uusi arvo"]
+##############################
+tekstii
+kassu
+7
+1
+abc
+5
+4
+undefined
+150
+uusi arvo
+> Uncaught ReferenceError: i is not defined
+    at code.js:91
+```
+
+<br>
+
+### Tehtävänanto
+
+- Tee `10` korkea ja `35` leveä suorakolmio käyttäen `#` merkkiä
+- Tehtässä saat käyttää vaan yhtä `console.log()` komentoa
+- Et saa käyttää `.repeat()` koodia
+- Joudut hyödyntämään `for` looppeja jotta saat tehtävän tehtyä
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+```js
+const luku1 = 5;
+const luku2 = 3;
+
+for(let i = 0; i < luku1; i++) {
+
+  // Voit for looppeja sisäkkäin O_o
+  for(let i2 = 0; i2 < luku2; i2++) {
+    console.log("luku1:", i, "luku2:", i2);
+  }
+
+  if(i < luku1 - 1) console.log("#".repeat(17));
+}
+```
+
+Esimerkin lopputulos
+
+```js
+luku1: 0 luku2: 0
+luku1: 0 luku2: 1
+luku1: 0 luku2: 2
+#################
+luku1: 1 luku2: 0
+luku1: 1 luku2: 1
+luku1: 1 luku2: 2
+#################
+luku1: 2 luku2: 0
+luku1: 2 luku2: 1
+luku1: 2 luku2: 2
+#################
+luku1: 3 luku2: 0
+luku1: 3 luku2: 1
+luku1: 3 luku2: 2
+#################
+luku1: 4 luku2: 0
+luku1: 4 luku2: 1
+luku1: 4 luku2: 2
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+let text = "";
+const leveys = 35;
+const korkeus = 10;
+
+for(let y = 0; y < korkeus; y++) {
+  let rivi = "";
+  for(let x = 0; x < leveys; x++) {
+    rivi += "#";
+  } text += rivi + "\n";
+}
+
+console.log(text);
+```
+
+</details>
