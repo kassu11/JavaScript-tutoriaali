@@ -677,7 +677,7 @@ console.log(taulu[9]) // tyhjaa tilaa voi yrittää hakea, mutta siellä ei ole 
 // tämä lisaa arvon aina taulun loppuun
 
 taulu.push("uusi arvo");
-// huomaa että push laita arvoa tyhjään kohtaan, vaan aina taulun perään
+// huomaa ettei push laita arvoa tyhjään kohtaan, vaan aina taulun perään
 console.log(taulu);
 
 console.log("#".repeat(30));
@@ -983,6 +983,50 @@ for(let kirjain of teksti) {
 }
 
 console.log(`tekstistä "${teksti}" löytyi ${montaLoytynyt} kertaa teksti "${etsittavaTeksti}"`);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 10 | Taulujen kääntöä
+
+### Tehtävänanto
+
+- Tallenna `olioon taulu`, jossa on `testi dataa`
+- Tee `toinen olio` johon tulee taulu, joka on `käännetty` toisinpäin
+- Tulosta konsoliin `vanha` ja uusi `käännetty taulu`
+
+<br>
+
+### Esimerkki tulos
+
+```js
+alkuperäinen taulu on (7) [12, "teksti", "605", 536, "kissa", "koira", 703]
+taulu takaperin on (7) [703, "koira", "kissa", 536, "605", "teksti", 12]
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const taulu = [12, "teksti", "605", 536, "kissa", "koira", 703];
+const tyhjaTaulu = []; // vaikka taulu on const, siihen voi lisätä arvoja
+
+for(let i = taulu.length - 1; i >= 0; i--) {
+  tyhjaTaulu.push(taulu[i]);
+}
+
+console.log("alkuperäinen taulu on", taulu);
+console.log("taulu takaperin on", tyhjaTaulu);
+
+// Tämä olisi myös toiminut
+for(let arvo of taulu) {
+  // Lisää arvon taulun alkuun, eikä loppuun
+  tyhjaTaulu.unshift(arvo);
+}
 ```
 
 </details>
