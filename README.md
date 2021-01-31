@@ -879,3 +879,54 @@ console.log(teksti + "\n" + viiva);
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 8 | Kertoma laskuri
+
+### Tehtävänanto
+
+- Tee `laskuri` joka laskee `annetun luvun kertoman`
+- Luvun `kertoma` eli `factorial` lasketaan näin
+  - Esim luvun `3` kertoma on `3 * 2 * 1 = 6`
+  - Luvun `6` kertoma on `6 * 5 * 4 * 3 * 2 * 1 = 120`
+- Tannennat haluamasi `kertoman luvun` olioon
+- Tulosta konsoliin `lasku yhtälö` ja `vastaus`
+
+<br>
+
+### 5 Esimerkki tapausta
+
+```js
+"7" kertoma on: 7 * 6 * 5 * 4 * 3 * 2 * 1 = 5040
+
+"1" kertoma on 1
+
+Laskuri ei tue negatiivisia numeroita
+
+"0" kertoma on 0
+
+"4" kertoma on: 4 * 3 * 2 * 1 = 24
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const kertoma = 8;
+let vastaus = kertoma;
+let yhtälö = `${kertoma}`;
+
+for(let uusiLuku = kertoma - 1; uusiLuku > 0; uusiLuku--) {
+  vastaus *= uusiLuku;
+  yhtälö += " * " + uusiLuku;
+}
+
+if(kertoma < 0) console.log("Laskuri ei tue negatiivisia numeroita");
+else if(kertoma < 2) console.log(`"${kertoma}" kertoma on ${kertoma}`);
+else console.log(`"${kertoma}" kertoma on: ${yhtälö} = ${vastaus}`);
+```
+
+</details>
