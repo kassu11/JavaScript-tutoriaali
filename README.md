@@ -1144,3 +1144,67 @@ if(tuplakirjain) {
   console.log(`tekstissä "${teksti}" ei ollut yhtään tuplakirjainta"`);
 }
 ```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 12 | Kolmion piirtäminen
+
+### Tehtävänanto
+
+- Piirrä konsoliin `kolmio`
+- Kolmion `pohjan koko` määritellään `oliossa` numerolla
+- Kolmio on piirretty konsoliin `*` merkillä
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+    *
+   **
+  ***
+ ****
+*****
+
+       *
+      **
+     ***
+    ****
+   *****
+  ******
+ *******
+********
+
+              *
+             **
+            ***
+           ****
+          *****
+         ******
+        *******
+       ********
+      *********
+     **********
+    ***********
+   ************
+  *************
+ **************
+***************
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const koko = 100;
+
+for(let i = 1; i <= koko; i++) {
+  console.log(" ".repeat(koko - i) + "*".repeat(i));
+}
+```
+
+</details>
