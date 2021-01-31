@@ -930,3 +930,59 @@ else console.log(`"${kertoma}" kertoma on: ${yhtälö} = ${vastaus}`);
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 9 | Tekstistä etsimistä
+
+### Tehtävänanto
+
+- Tee `olio` johon `tallennat tektiä`
+- Tee toinen `olio` johon `tallennat tekstijonon` jota haluat `etsiä` edellisestä oliosta
+- Sovellus palauttaa konsoliin
+  - Tekstin `josta` etsitään
+  - Tekstin `mitä` etsitään
+  - `Monta kertaa` etsittävä teksti `löydettiin`
+
+<br>
+
+### Esimerkki tapauksia
+
+```js
+tekstistä "kauppa sulkeutuu viideltä" löytyi 1 kertaa teksti "ppa"
+
+tekstistä "kauppa sulkeutuu viideltä" löytyi 5 kertaa teksti "u"
+
+tekstistä "kauppa sulkeutuu viideltä" löytyi 1 kertaa teksti "sulkeutuu viideltä"
+
+tekstistä "yksi kaksi kolme neljä viisi" löytyi 4 kertaa teksti " "
+
+tekstistä "yksi kaksi kolme neljä viisi" löytyi 3 kertaa teksti "si"
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const etsittavaTeksti = "asd";
+const teksti = "miten menee olen teksti";
+
+let etsiNumero = 0;
+let montaLoytynyt = 0;
+
+for(let kirjain of teksti) {
+  if(kirjain == etsittavaTeksti[etsiNumero]) {
+    etsiNumero++;
+    if(etsiNumero == etsittavaTeksti.length) {
+      montaLoytynyt++;
+      etsiNumero = 0;
+    }
+  } else etsiNumero = 0;
+}
+
+console.log(`tekstistä "${teksti}" löytyi ${montaLoytynyt} kertaa teksti "${etsittavaTeksti}"`);
+```
+
+</details>
