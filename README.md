@@ -34,7 +34,7 @@
 // Tässä on tapoja luoda olioita
 var lukuA = 2;  // "var" on vanha tapa tehdä olioita, eikä sitä kannata käyttää enää, mutta sitä näkee koodissa joka on ennen 2015 tehty
 let lukuB = 6;  // "let" ja "const" on uusia tapoja tehdä olioita, ja niitä kannattaa käyttää var tilalla
-const lukuC = 10; // "let" tallentaa olin tiedon, mutta sitä voi muuttaa myöhemmin, "const" ei anna sitä muuttaa
+const lukuC = 10; // "let" tallentaa olion tiedon, mutta sitä voi muuttaa myöhemmin, "const" ei anna sitä muuttaa
 
 console.log(lukuA + lukuB); // Näyttää konsolissa paljon on 2 + 6, eli 8
 console.log("Voit myös laittaa teksti tänne"); // Tämä tulee myös konsoliin
@@ -202,14 +202,14 @@ tämä viiva on 15 merkkiä pitkä
 
 ### Tehtävänanto
 
-- Tee `olio` johon voi tallennetaan `tekstiä`
+- Tee `olio` johon voi tallentaa `tekstiä`
 - Olion teksti kirjoitetaan konsooliin ja se saa alleviivauksen
 - Alleviivaus on tehty vaikka `#` merkistä
   - Viiva on aina yhtäpitkä kun olio teksti
 
 <br>
 
-### Odotettu lopputulos
+### Tässä 3 esimerkki tulosta
 
 ```js
 tää on teksti
@@ -824,6 +824,58 @@ for(let y = 0; y < korkeus; y++) {
 }
 
 console.log(text);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 7 | Alleviivaus väleillä
+
+### Tehtävänanto
+
+- Tee `tehtävä 2`, mutta alleviivaus ei mene `väleihin`
+- Jos tekstissä `ei ole välejä` se tekee samanlailla kun tehtävä 2
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+olen teksti jossa on välejä
+#### ###### ##### ## ######
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit käydä tekstin läpi `for` loopilla
+
+```js
+const text = "wow";
+
+for(let i = 0; i < text; i++) {
+  console.log(text[i]);
+}
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "olen teksti jossa on välejä";
+let viiva = "";
+
+for(let i = 0; i < teksti.length; i++) {
+  if(teksti[i] == " ") viiva += " ";
+  else viiva += "#";
+}
+
+console.log(teksti + "\n" + viiva);
 ```
 
 </details>
