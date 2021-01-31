@@ -1065,7 +1065,102 @@ for(let arvo of taulu) {
 
 <br>
 
-## Tehtävä 11 | Tuplakirjainten löytäminen
+## Tehtävä 11 | Kolmion piirtäminen
+
+### Tehtävänanto
+
+- Piirrä konsoliin `kolmio`
+- Kolmion `pohjan koko` määritellään `oliossa` numerolla
+- Kolmio on piirretty konsoliin `*` merkillä
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+    *
+   **
+  ***
+ ****
+*****
+
+       *
+      **
+     ***
+    ****
+   *****
+  ******
+ *******
+********
+
+              *
+             **
+            ***
+           ****
+          *****
+         ******
+        *******
+       ********
+      *********
+     **********
+    ***********
+   ************
+  *************
+ **************
+***************
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const koko = 100;
+
+for(let i = 1; i <= koko; i++) {
+  console.log(" ".repeat(koko - i) + "*".repeat(i));
+}
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 12 | Tuplakirjainten löytäminen
+
+Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
+
+```js
+// Etsii tekstistä tietyn kirjain arvon, ja palauttaa sen index numeron
+console.log("abcdefghijklmnop".indexOf("g"));
+console.log("abcdefghijklmnop".indexOf("lmn"));
+// Jos arvoa ei löydy tekstistä palauttaa -1
+console.log("kauppa".indexOf("o"));
+
+// muuttaa jokaisen kirjaimen isoksi
+console.log("Kaikki On Isolla".toUpperCase());
+// muuttaa jokaisen kirjaimen pieneksi
+console.log("KAIKKI ON PIENELLÄ".toLowerCase());
+
+for(let i = 0; i < 10; i++) {
+  console.log("Aloittaa", i);
+
+  // "%" on joka jäännös
+  // se testaa montakertaa joku on jaollinen, ja paljon siitä jää yli
+    // Esim 3 % 2 == 1
+    // Esim 6 % 2 == 0
+  if(i > 6) break;  // Jos luku on yli 6 se poistuu loopista
+  if(i % 2 == 0) continue; // Jos luku on parillinen, se alottaa seuraavaan kierroksen loopista
+  console.log("\tLopettaa", i);
+}
+
+console.log(Math.ceil(8.9), Math.ceil(3.1)); // Pyöristää ylöspäin
+console.log(Math.floor(8.9), Math.floor(3.1)); // Pyöristää alaspäin
+console.log(Math.round(8.9), Math.round(3.1), Math.round(7.5)); // Pyöristää normaalisti
+```
+
+<br>
 
 ### Tehtävänanto
 
@@ -1151,60 +1246,72 @@ if(tuplakirjain) {
 
 <br>
 
-## Tehtävä 12 | Kolmion piirtäminen
+## Tehtävä 13 | Pyramiidin teko
 
 ### Tehtävänanto
 
-- Piirrä konsoliin `kolmio`
-- Kolmion `pohjan koko` määritellään `oliossa` numerolla
-- Kolmio on piirretty konsoliin `*` merkillä
+- Tee konsoliin pyramiidi `*` merkeistä
+- Tehtävässä `saa käyttää vaan yhtä console.log()` lausetta
+- Pyramiidin `koko` määritetään `oliolla`
+  - `Olio` kertoo pyramiidin `pohjan leveyden`
+  - Leveys `pyöristetään alaspäin`, esim `4 leveys olis 3`
 
 <br>
 
 ### Esimerkki tuloksia
 
 ```js
-    *
-   **
-  ***
- ****
-*****
-
+> 15
        *
-      **
-     ***
-    ****
-   *****
-  ******
- *******
-********
-
-              *
-             **
-            ***
-           ****
-          *****
-         ******
-        *******
-       ********
-      *********
-     **********
-    ***********
-   ************
-  *************
- **************
+      ***
+     *****
+    *******
+   *********
+  ***********
+ *************
 ***************
+
+> 4
+ *
+***
+
+> 6
+  *
+ ***
+*****
 ```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit käyttää `%` matikka operaattoria laskemaan `jakojäännöksen`
+- Jakojäännöksellä voit helposti tarkistaa onko luku `parinninen` vai ei
+
+```js
+if(120 % 2 == 0) console.log("luku 120 on parinninen");
+if(132 % 3 == 0) console.log("luku 132 on jaollinen 3");
+
+console.log(11 % 5) // "11" menee lukuun "5" kaksi kertaa, ja siitä jää 1 yli
+```
+
+</details>
+
+
 
 <details>
 <summary>Vastaus</summary>
 
 ```js
-const koko = 100;
+const koko = 15;
+let pyramiidi = "";
+let valit = koko / 2;
+// tarkistaa onko luku jaollinen 2, jos on pyöristää alaspäin
+if(koko % 2 == 0) valit = (koko - 1) / 2;
 
-for(let i = 1; i <= koko; i++) {
-  console.log(" ".repeat(koko - i) + "*".repeat(i));
-}
+
+for(let i = 1; i <= koko; i += 2) {
+  pyramiidi += " ".repeat(valit--) + "*".repeat(i) + "\n";
+} if(koko > 0) console.log(pyramiidi);
 ```
 
 </details>
