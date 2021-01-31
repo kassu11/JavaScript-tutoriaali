@@ -344,11 +344,11 @@ console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
 - Neliön `koko` määritetään `numerolla oliossa`
   - Käytät `kokoon yhtä oliota`, joka tallentaa `pituuden`
 - Neliön `ei` tarvitse `toimia alle 10` olevilla numeroilla
-- Tehtävässä saa käytetään yhtä `console.log()` komentoa
+- Tehtävässä saa käyttää yhtä `console.log()` komentoa
 
 <br>
 
-### Esimerkki tulos
+### 3 Esimerkki tulosta
 
 ```js
 ##############################
@@ -461,7 +461,7 @@ if(luku != 2 && "c" > "b" && luku == 32) { // jos kaikki ehdot on "true" se suor
 }
 
 // || on tämä ehto, jos jompikumpi ehdoista tulee toteen, suorittuu if lause
-if(4 < 100 || 10 + 50 == 60) {
+if(4 > 100 || 10 + 50 == 60) {
   console.log("Suorittaa koska 10 + 50 on 60");
 }
 ```
@@ -492,7 +492,7 @@ Suorittaa koska 10 + 50 on 60
 - Tee sovellus joka palauttaa konsoliin `tietoa numerosta`
 - Sovellus kertoo onko numero `positiivinen` vai `negatiivinen`
 - Jos numero on nolla se sanoo `"Lukusi on 0"`
-- Jos et laittamasi arvo `ei ole numero`, sanoo konsoli siitä jotain
+- Jos laittamasi arvo `ei ole numero`, konsoli sanoo siitä jotain
 
 <br>
 
