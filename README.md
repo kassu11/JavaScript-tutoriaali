@@ -492,7 +492,7 @@ Suorittaa koska 10 + 50 on 60
 - Tee sovellus joka palauttaa konsoliin `tietoa numerosta`
 - Sovellus kertoo onko numero `positiivinen` vai `negatiivinen`
 - Jos numero on nolla se sanoo `"Lukusi on 0"`
-- Jos laittamasi arvo `ei ole numero`, konsoli sanoo siitä jotain
+- Jos laittamasi arvo `ei ole numero`, sanoo konsoli siitä jotain
 
 <br>
 
@@ -1009,6 +1009,36 @@ taulu takaperin on (7) [703, "koira", "kissa", 536, "605", "teksti", 12]
 ```
 
 <details>
+<summary>Vinkki 1</summary>
+
+- Kannattaa lukea [Tehtävä 6](#tehtävä-6--loopit-ja-taulut) dokumentaatia tarkemmin
+
+<details>
+<summary>Vinkki 2</summary>
+
+```js
+const taulu = [];
+
+taulu.push("213");
+taulu.push(57);
+taulu.push(23);
+taulu.push("talo");
+
+console.log(taulu);
+```
+<br>
+
+Esimerkki tulos
+
+```js
+(4) ["213", 57, 23, "talo"]
+```
+
+</details>
+
+</details>
+
+<details>
 <summary>Vastaus</summary>
 
 ```js
@@ -1030,3 +1060,87 @@ for(let arvo of taulu) {
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 11 | Tuplakirjainten löytäminen
+
+### Tehtävänanto
+
+- Tallenna etsittävä `teksti olioon`
+- Sovellus etsii `onko` tekstissä yhtään `kirjainta keksi kertaa`
+  - `Ensimmäinen` kirjain jota löytyy `2 kertaa kirjoitetaan konsoliin`
+  - Jos samoja kirjaimia ei tekstissä `ole yli 1`, `sanotaan siitä konsoliin`
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+ensimmäinen tuplakirjain tekstissä "koiran ruoka on lopussa" on "r"
+
+tekstissä "kirja" ei ollut yhtään tuplakirjainta
+
+ensimmäinen tuplakirjain tekstissä "erkin omena" on "e"
+
+ensimmäinen tuplakirjain tekstissä "kissa kehrää" on "s"
+```
+
+</details>
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit käyttää `indexOf()` functiota löytämään onko tekstissä mitä etsit
+
+```js
+console.log("abcd".indexOf("g")) // palauttaa -1 koska ei löytynyt
+
+console.log("terve".indexOf("t")) // palauttaa 0, koska "t" oli ensimmäinen kirjain
+
+const nimi = "Pertti";
+
+if(nimi.indexOf("ö") == -1) {
+  console.log(`nimestäsi ei löytynyt "ö" kirjainta`);
+}
+```
+
+<details>
+<summary>Vinkki 2</summary>
+
+- Voit käyttää `break` komentoa jos haluat poistua `for` loopista
+
+```js
+for(let i = 0; i < 100; i++) {
+  console.log(i);
+  if(i > 10) break; // Lopettaa loopin, jos "i" menee yli 10
+}
+```
+
+</details>
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "koiran ruoka on lopussa";
+const tarkistetutKirjaimet = [];
+let tuplakirjain = "";
+
+for(const kirjain of teksti) {
+  if(tarkistetutKirjaimet.indexOf(kirjain) !== -1) {
+    tuplakirjain = kirjain;
+    break;
+  } else tarkistetutKirjaimet.push(kirjain);
+}
+
+if(tuplakirjain) {
+  console.log(`ensimmäinen tuplakirjain tekstissä "${teksti}" on "${tuplakirjain}"`);
+} else {
+  console.log(`tekstissä "${teksti}" ei ollut yhtään tuplakirjainta"`);
+}
+```
