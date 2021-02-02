@@ -1200,3 +1200,51 @@ for(let i = 1; i <= koko; i += 2) {
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 13 | Palindromin tunnistus
+
+### Tehtävänanto
+
+- Tee sovellus joka tunnistaa `palindromin`
+  - `Palindromi` on `teksti/numero/merkki jono`, joka on `taka ja etuperin sama`
+  - Esim `saippuakauppias`
+  - Esim `5005`
+- Sovellus `ei välitä` onko `kirjaimet isolla vai pienellä`
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+teksti "saippuakauppias" on palindromi
+
+teksti "teksti" on takaperin "itsket", se ei ole palindromi
+
+teksti "12321" on palindromi
+
+teksti "loL" on palindromi
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "saippuakauppias";
+let takaperin = "";
+
+for(const kirjain of teksti) {
+  takaperin = kirjain + takaperin;
+}
+
+if(teksti.toLowerCase() == takaperin.toLowerCase()) {
+  console.log(`teksti "${teksti}" on palindromi`);
+} else {
+  console.log(`teksti "${teksti}" on takaperin "${takaperin}", se ei ole palindromi`);
+}
+```
+
+</details>
