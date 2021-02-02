@@ -1230,6 +1230,18 @@ teksti "loL" on palindromi
 ```
 
 <details>
+<summary>Vinkki 1</summary>
+
+- Voit käyttää `toLowerCase()` functiota
+- Nytten testi ei välitä kirjain koko erosta
+
+```js
+console.log("TÄMÄ ON ISO".toLowerCase());
+```
+
+</details>
+
+<details>
 <summary>Vastaus</summary>
 
 ```js
@@ -1245,6 +1257,51 @@ if(teksti.toLowerCase() == takaperin.toLowerCase()) {
 } else {
   console.log(`teksti "${teksti}" on takaperin "${takaperin}", se ei ole palindromi`);
 }
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 14 | Isot alkukirjaimet
+
+### Tehtävänanto
+
+- Tallenna teksti `olioon`, ja muuta siitä jokainen `alkukirjain isoksi`
+- Jos tekstissä on jo `isoja kirjaimia` tulee ne `muuttaa pieneksi`
+- Jokainen kirjain `välin jälkeen` tulee olla `isolla`
+- Myös `ensimmäinen` kirjain tekstissä tulisi olla `isolla`
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+> "olen teksti joSsa on isOJa kirjaimia"
+Olen Teksti Jossa On Isoja Kirjaimia
+
+> "KAIKKI ON ISOLLA      MUHAHAHAH"
+Kaikki On Isolla      Muhahahah
+
+> "yksipitkäsana"
+Yksipitkäsana
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "olen teksti joSsa on isOJa kirjaimia";
+let uusiTeksti = "";
+
+for(let i = 0; i < teksti.length; i++) {
+  if(teksti[i - 1] == " " || i == 0) uusiTeksti += teksti[i].toUpperCase();
+  else uusiTeksti += teksti[i].toLowerCase();
+}
+
+console.log(uusiTeksti);
 ```
 
 </details>
