@@ -150,9 +150,7 @@ console.log(`Hei, olen ${ika} vuotta vanha ja nimeni on ${nimi}!`); // tää on 
 
 ---
 
-<br>
-
-## Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
+### Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
 
 ```js
 const viiva = "#".repeat(15); // toistaa merkin "#" 15 kertaa
@@ -406,9 +404,7 @@ console.log(rivi + tyhjaRivi.repeat(nelionKoko / 2 - 2) + rivi);
 
 ---
 
-<br>
-
-## Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
+### Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
 
 ```js
 let luku = 5; // Jos muutat tätä lukua, huomaat että vastaus vaihtuu
@@ -615,9 +611,7 @@ else console.log(`"${luku}" ei ole numero!`)
 
 ---
 
-<br>
-
-## Materiaalia `for` loopista
+### Materiaalia `for` loopista, `+=` ja `-=` operaattoreista
 
 ```js
 let luku = 5;
@@ -1011,9 +1005,7 @@ for(let i = 1; i <= koko; i++) {
 
 ---
 
-<br>
-
-## Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
+### Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
 
 ```js
 // Etsii tekstistä tietyn kirjain arvon, ja palauttaa sen index numeron
@@ -1190,8 +1182,6 @@ console.log(11 % 5) // "11" menee lukuun "5" kaksi kertaa, ja siitä jää 1 yli
 ```
 
 </details>
-
-
 
 <details>
 <summary>Vastaus</summary>
