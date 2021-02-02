@@ -45,6 +45,9 @@ lukuB = 3;
 console.log("lukuA on nyt", lukuA) // Voit yhdistää tekstiä ja olioita
 console.log("lukuB on nyt" + lukuA) // "+" toimii myös, mutta ei luo väliä
 
+lukuA = lukuA + 50; // Voit myös tehdä näin, joka ei olisi mahdollista normaalissa matikassa
+console.log(lukuA);
+
 lukuC = 4;  // Jos yrität muuttaa "lukuC", tulee error, koska olio luotiin "const" termillä, joka estää muutoksen
 ```
 
@@ -57,8 +60,9 @@ lukuC = 4;  // Jos yrität muuttaa "lukuC", tulee error, koska olio luotiin "con
 Voit myös laittaa teksti tänne
 lukuA on nyt 15
 lukuB on nyt15
+65
 > Uncaught TypeError: Assignment to constant variable.
-    at code.js:23
+    at code.js:26
 ```
 
 ---
@@ -148,9 +152,7 @@ console.log(`Hei, olen ${ika} vuotta vanha ja nimeni on ${nimi}!`); // tää on 
 
 <br>
 
-## Tehtävä 2 | Toistoa ja pituutta
-
-Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
+## Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
 
 ```js
 const viiva = "#".repeat(15); // toistaa merkin "#" 15 kertaa
@@ -176,7 +178,7 @@ console.log("\t\ttekstii\n".repeat(5));
 
 <br>
 
-Odotettu lopputulos
+### Odotettu lopputulos
 
 ```js
 ###############
@@ -198,7 +200,11 @@ tämä viiva on 15 merkkiä pitkä
 		tekstii
 ```
 
+---
+
 <br>
+
+## Tehtävä 2 | Tekstin alleviivausta
 
 ### Tehtävänanto
 
@@ -402,40 +408,32 @@ console.log(rivi + tyhjaRivi.repeat(nelionKoko / 2 - 2) + rivi);
 
 <br>
 
-## Tehtävä 5 | Logiikka operaattorit
-
-Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
+## Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
 
 ```js
-let luku = 5;
+let luku = 5; // Jos muutat tätä lukua, huomaat että vastaus vaihtuu
 
-// Testaa onko olio "luku" pienempi kun 10
-if(luku < 10) { // jos on, suorita kaikki koodi sen sisällä
+if(luku < 10) { // Testaa onko luku alle 10
+  // Jos on, se suorittaa kaiken aalkosulkeitten sisällä
   console.log(luku, "on pienempi kun 10");
-  console.log("#".repeat(30));
+} 
+else if(luku < 20) { // Jos eka tarkistus ei onnistu, tarkistaa tämän
+  console.log(luku, "on pienempi kun 20");
+}
+else if(luku < 30) { // Sitten tarkistaa tämän
+  console.log(luku, "on pienempi kun 30");
+}
+else { // Jos kaikki aikaisemmat tarkistukset eivät olleet tosia, suorittaa tämän
+  console.log(luku, "ei suorittanut mitään testiä");
 }
 
 luku = 32;
-
-if(luku < 10) {
-  console.log(luku, "on pienempi kun 10");
-} 
-else { // suorita tämä jos if lause ei suoritu
-  console.log(luku, "ei suorittanut testiä");
-}
-
-
 if(luku > 50) { // tarkistaa ehdon
   console.log(luku, "on isompi kun 50");
 }
-else if(luku > 30) { // jos ei suoritu tarkistaa tämän
-  console.log(luku, "on isompi kun 30");
+else {  // Voit suoraan laittaa if, lauseen perään else
+  console.log(luku, "ei ollut isompi kun 50");
 }
-else {  // jos mikään ei mennyt läpi suorittaa tämän
-  console.log(luku, "ei ollut isompi kun 50 tai 30");
-}
-
-console.log("#".repeat(30));
 
 console.log(10 > 5); // voit myös suorittaa logiikka operaattoreita näin
 console.log(10 < 5); // palauttaa joko "true" tai "false"
@@ -443,8 +441,6 @@ console.log(10 < 5); // palauttaa joko "true" tai "false"
 
 console.log(luku == 32) // Voit myös testata, onko joku tasan tietty arvo
 console.log(luku != 32) // Tämä on päinastoin, onko se jokin muu kun 32, jos on 32 palauttaa "false"
-
-
 
 if(luku != 2) {
   if("c" > "b") {
@@ -460,22 +456,37 @@ if(luku != 2 && "c" > "b" && luku == 32) { // jos kaikki ehdot on "true" se suor
   console.log("&& merkit on käytännöllisiä");
 }
 
-// || on tämä ehto, jos jompikumpi ehdoista tulee toteen, suorittuu if lause
+// || on tai ehto, jos jompikumpi ehdoista tulee toteen, suorittuu if lause
 if(4 > 100 || 10 + 50 == 60) {
   console.log("Suorittaa koska 10 + 50 on 60");
 }
+
+// Jokainen aaltosulje avaa uuden "ikkunan, jossa voi luoda omia olioita, joita ei voi käsitellä sen ulkopuolella"
+
+if(2 < 5) {
+  let testi = "tekstiä";
+  console.log("suorittuu ekasta if lauseesta", testi) // Voin käsitellä oliota normaalisti täällä
+  if(3 < 5) {
+    console.log("suorittuu tokasta if lauseesta", testi); // voin myös käyttää sitä muissa if, lauseissa tämän sisällä
+    let testi2 = "lisää tekstiä";
+    console.log(testi2);
+  }
+
+  // En voi käyttää testi2 täällä, koska se luotiin toisessa "ikkunassa"
+  // console.log(testi2) /* Tämä tekisi errorin*/
+}
+
+console.log("Tämä tekee errorin, koska olio luotiin if lauseen sisällä, eikä siihen ole oikeutta täältä");
+console.log(testi);
 ```
 
 <br>
 
-Odotettu lopputulos
+### Odotettu lopputulos
 
 ```js
 5 "on pienempi kun 10"
-##############################
-32 "ei suorittanut testiä"
-32 "on isompi kun 30"
-##############################
+32 "ei ollut isompi kun 50"
 true
 false
 true
@@ -483,9 +494,19 @@ false
 Suoritettu
 && merkit on käytännöllisiä
 Suorittaa koska 10 + 50 on 60
+suorittuu ekasta if lauseesta tekstiä
+suorittuu tokasta if lauseesta tekstiä
+lisää tekstiä
+Tämä tekee errorin, koska olio luotiin if lauseen sisällä, eikä siihen ole oikeutta täältä
+> Uncaught ReferenceError: testi is not defined
+    at code.js:67
 ```
 
+---
+
 <br>
+
+## Tehtävä 5 | Positiivinen ja negatiivinen
 
 ### Tehtävänanto
 
@@ -596,149 +617,88 @@ else console.log(`"${luku}" ei ole numero!`)
 
 <br>
 
-## Tehtävä 6 | Loopit ja taulut
-
-Materiaalia `while` & `for` loopista sekä tauluista
+## Materiaalia `for` loopista
 
 ```js
+let luku = 5;
+console.log(luku);
+luku += 10; // Lisää lukuun 10
+console.log(luku);
+luku += 20; // Lisää lukuun 20
+console.log(luku);
+luku -= 30; // Vähentää luvusta 30
+console.log(luku);
+
 console.log("ennen for looppia");
-
-// Tää on yksinkertaisin muoto for loopista
-  // Se koostuu 3 osasta
-  // Ensit luot olion
-  // sitten asetat if ehdon, joka kertoo miten kauan loop on voimassa
-    // Tämä ehto tarkistetaan joka looppi
-  // viimeinen osa sanoo mitä loop tekee joka kerta kun se suoritetaan
-    // nytten se lisää 1 numeroon, ja kun numero menee yli 4 se lopettaa
-
-for(let numero = 0; numero < 5; numero = numero + 1) {
-  console.log(numero);
+// For loop koostuu 3 osasta
+  // 1. Luo olio
+  // 2. If ehto, ja niin kauan kun se tulee toteen, for loop pysyy päällä
+  // 3. Toiminto, mitä looppi tekee joka toistokerran jälkeen
+for(let numero = 0; numero < 5; numero += 1) {
+  console.log("for loop", numero);
 }
 
 console.log("for loopin jälkeen");
 
-// Sinun ei tarvitse laittaa kaikkia 3 osaa for looppin
-// kunhan aina laitat 2 ";" merkkiä
+// ++ nostaa numeroa yhdellä
+for(let eka = 0; eka < 3; eka++) {
+  console.log("Ensimmäinen loop", eka);
 
-let numero = 0;
-for(;numero < 3;) {
-  if(numero > 0) { // voit myös tietenkin laittaa if ja muita koodeja tänne sisälle
-    console.log(numero)
+  for(let toka = 2; toka > 0; toka--) {
+    console.log("Toinen loop", `Eka: ${eka} Toka: ${toka}`);
   }
-  numero += 1; // tämä on sama kun sanoisi "numero = numero + 1"
+  // console.log(toka); /* Aiheuttaisi errorin */
 }
 
-console.log("#".repeat(30));
+// Vähän niikun if lauseissa, koska oliot "eka" ja "toka" luotiin for loopissa
+// Niitä ei voi käyttää täällä
 
-// jos teet tuon tapaisen loopin voit käyttää while, joka ottaa vaan if ehdon sisälle
+// console.log(eka); /* Aiheuttaisi errorin */
 
-let numero2 = 0;
-while(numero2 < 3) {
-  console.log(numero2);
-  numero2++; // tämä on sama kun sanoisi numero += 1
+const teksti = "kauppa";
+for(let num = 0; num < teksti.length; num++) {
+  console.log(`tekstin "${teksti}" kirjain "${num}" on: ${teksti[num]}`);
 }
-
-console.log("#".repeat(30))
-
-/* =====================================
-# Yleensä for looppeja käytetään       #
-# taulujen ja objectejan kanssa joten  #
-# opetan ne seuraavaksi                #
-# =================================== */
-
-// tallennetaan taulu olioon nänä arvot
-let taulu = [5, "kassu", 7, 1, "abc", 5, 4];
-
-console.log(taulu) // näet kaikki taulun arvot
-
-// voit lukea taulun arvoja, laittamalla rivi numeron loppuun näin
-console.log(taulu[0]) // eka arvo taulussa on "5"
-console.log(taulu[3]) // kolmas arvo on 1, koska numerot alkaa 0
-
-// voit saada näin tietää monta arvoa taulussa on
-console.log(taulu.length) // palauttaa 7
-// muista että pituudesta pitää vähentää 1, koska numerot alkaa 0, eikä 1
-console.log(taulu[taulu.length - 1]);
-
-console.log("#".repeat(30));
-
-// voit muuttaa taulun arvoja näin
-
-taulu[0] = "tekstii"; // nytten muutit 5 --> "tekstii"
-console.log(taulu);
-
-// voit laittaa uuden tiedon myös tauluun, jos siinä numerossa ei vielä ole mitään
-taulu[10] = 150 // taulu oli vaan 7 pitkä, mutta voit silti laittaa 10 indexiin arvon
-
-console.log(taulu); // huomaa että taulussa on nytten tyhjiä tiloja
-console.log(taulu[9]) // tyhjaa tilaa voi yrittää hakea, mutta siellä ei ole mitään
-
-// jos haluat lisätä uuden arvon tauluun, voit myös vaan käyttää push komentoa
-// tämä lisaa arvon aina taulun loppuun
-
-taulu.push("uusi arvo");
-// huomaa ettei push laita arvoa tyhjään kohtaan, vaan aina taulun perään
-console.log(taulu);
-
-console.log("#".repeat(30));
-
-// Tämä on yleisin for loop mitä tulet näkemään
-// i on yleensä lyhenne sanalle index
-// vetää läpi kaikki arvot taulussa
-for(let i = 0; i < taulu.length; i++) {
-  console.log(taulu[i]);
-}
-
-/* Ota huomioon että koska i on luotu for loopissa,
- sitä ei voi käyttä sen ulkopuolella */
-console.log(i);
 ```
 
 <br>
 
-Esimerkin lopputulos
+### Esimerkin lopputulos
 
 ```js
+5
+15
+35
+5
 ennen for looppia
-0
-1
-2
-3
-4
+for loop 0
+for loop 1
+for loop 2
+for loop 3
+for loop 4
 for loopin jälkeen
-1
-2
-##############################
-0
-1
-2
-##############################
-(7) [5, "kassu", 7, 1, "abc", 5, 4]
-5
-1
-7
-4
-##############################
-(7) ["tekstii", "kassu", 7, 1, "abc", 5, 4]
-(11) ["tekstii", "kassu", 7, 1, "abc", 5, 4, empty × 3, 150]
-undefined
-(12) ["tekstii", "kassu", 7, 1, "abc", 5, 4, empty × 3, 150, "uusi arvo"]
-##############################
-tekstii
-kassu
-7
-1
-abc
-5
-4
-undefined
-150
-uusi arvo
-> Uncaught ReferenceError: i is not defined
-    at code.js:91
+Ensimmäinen loop 0
+Toinen loop Eka: 0 Toka: 2
+Toinen loop Eka: 0 Toka: 1
+Ensimmäinen loop 1
+Toinen loop Eka: 1 Toka: 2
+Toinen loop Eka: 1 Toka: 1
+Ensimmäinen loop 2
+Toinen loop Eka: 2 Toka: 2
+Toinen loop Eka: 2 Toka: 1
+tekstin "kauppa" kirjain "0" on: k
+tekstin "kauppa" kirjain "1" on: a
+tekstin "kauppa" kirjain "2" on: u
+tekstin "kauppa" kirjain "3" on: p
+tekstin "kauppa" kirjain "4" on: p
+tekstin "kauppa" kirjain "5" on: a
 ```
 
+---
+
 <br>
+
+## Tehtävä 6 | Suorakulmion teko for loopilla
 
 ### Tehtävänanto
 
@@ -773,7 +733,7 @@ const luku2 = 3;
 
 for(let i = 0; i < luku1; i++) {
 
-  // Voit for looppeja sisäkkäin O_o
+  // Voit laittaa for looppeja sisäkkäin O_o
   for(let i2 = 0; i2 < luku2; i2++) {
     console.log("luku1:", i, "luku2:", i2);
   }
@@ -991,81 +951,7 @@ console.log(`tekstistä "${teksti}" löytyi ${montaLoytynyt} kertaa teksti "${et
 
 <br>
 
-## Tehtävä 10 | Taulujen kääntöä
-
-### Tehtävänanto
-
-- Tallenna `olioon taulu`, jossa on `testi dataa`
-- Tee `toinen olio` johon tulee taulu, joka on `käännetty` toisinpäin
-- Tulosta konsoliin `vanha` ja uusi `käännetty taulu`
-
-<br>
-
-### Esimerkki tulos
-
-```js
-alkuperäinen taulu on (7) [12, "teksti", "605", 536, "kissa", "koira", 703]
-taulu takaperin on (7) [703, "koira", "kissa", 536, "605", "teksti", 12]
-```
-
-<details>
-<summary>Vinkki 1</summary>
-
-- Kannattaa lukea [Tehtävä 6](#tehtävä-6--loopit-ja-taulut) dokumentaatia tarkemmin
-
-<details>
-<summary>Vinkki 2</summary>
-
-```js
-const taulu = [];
-
-taulu.push("213");
-taulu.push(57);
-taulu.push(23);
-taulu.push("talo");
-
-console.log(taulu);
-```
-<br>
-
-Esimerkki tulos
-
-```js
-(4) ["213", 57, 23, "talo"]
-```
-
-</details>
-
-</details>
-
-<details>
-<summary>Vastaus</summary>
-
-```js
-const taulu = [12, "teksti", "605", 536, "kissa", "koira", 703];
-const tyhjaTaulu = []; // vaikka taulu on const, siihen voi lisätä arvoja
-
-for(let i = taulu.length - 1; i >= 0; i--) {
-  tyhjaTaulu.push(taulu[i]);
-}
-
-console.log("alkuperäinen taulu on", taulu);
-console.log("taulu takaperin on", tyhjaTaulu);
-
-// Tämä olisi myös toiminut
-for(let arvo of taulu) {
-  // Lisää arvon taulun alkuun, eikä loppuun
-  tyhjaTaulu.unshift(arvo);
-}
-```
-
-</details>
-
----
-
-<br>
-
-## Tehtävä 11 | Kolmion piirtäminen
+## Tehtävä 10 | Kolmion piirtäminen
 
 ### Tehtävänanto
 
@@ -1127,9 +1013,7 @@ for(let i = 1; i <= koko; i++) {
 
 <br>
 
-## Tehtävä 12 | Tuplakirjainten löytäminen
-
-Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
+## Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
 
 ```js
 // Etsii tekstistä tietyn kirjain arvon, ja palauttaa sen index numeron
@@ -1155,12 +1039,23 @@ for(let i = 0; i < 10; i++) {
   console.log("\tLopettaa", i);
 }
 
+let luku = 5;
+while(2 < 100) {
+  luku += 5;
+  console.log("while loop on toinen loop, joka ei vaadi kun vaan yhden ehdon", luku);
+  if(luku > 20) break;
+}
+
 console.log(Math.ceil(8.9), Math.ceil(3.1)); // Pyöristää ylöspäin
 console.log(Math.floor(8.9), Math.floor(3.1)); // Pyöristää alaspäin
 console.log(Math.round(8.9), Math.round(3.1), Math.round(7.5)); // Pyöristää normaalisti
 ```
 
+---
+
 <br>
+
+## Tehtävä 11 | Tuplakirjainten löytäminen
 
 ### Tehtävänanto
 
@@ -1246,7 +1141,7 @@ if(tuplakirjain) {
 
 <br>
 
-## Tehtävä 13 | Pyramiidin teko
+## Tehtävä 12 | Pyramiidin teko
 
 ### Tehtävänanto
 
