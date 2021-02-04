@@ -810,7 +810,7 @@ olen teksti jossa on välejä
 ```js
 const text = "wow";
 
-for(let i = 0; i < text; i++) {
+for(let i = 0; i < text.length; i++) {
   console.log(text[i]);
 }
 ```
