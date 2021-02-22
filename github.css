@@ -1,6 +1,6 @@
 body {
   font-family: Helvetica, arial, sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.6;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -39,44 +39,44 @@ h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:h
   text-decoration: none; }
 
 h1 tt, h1 code {
-  font-size: inherit; }
+  font-size: 10px; }
 
 h2 tt, h2 code {
-  font-size: inherit; }
+  font-size: 10px; }
 
 h3 tt, h3 code {
-  font-size: inherit; }
+  font-size: 10px; }
 
 h4 tt, h4 code {
-  font-size: inherit; }
+  font-size: 10px; }
 
 h5 tt, h5 code {
-  font-size: inherit; }
+  font-size: 10px; }
 
 h6 tt, h6 code {
-  font-size: inherit; }
+  font-size: 10px; }
 
 h1 {
-  font-size: 28px;
+  font-size: 10px;
   color: black; }
 
 h2 {
-  font-size: 24px;
+  font-size: 10px;
   border-bottom: 1px solid #cccccc;
   color: black; }
 
 h3 {
-  font-size: 18px; }
+  font-size: 10px; }
 
 h4 {
-  font-size: 16px; }
+  font-size: 10px; }
 
 h5 {
-  font-size: 14px; }
+  font-size: 10px; }
 
 h6 {
   color: #777777;
-  font-size: 14px; }
+  font-size: 10px; }
 
 p, blockquote, ul, ol, dl, li, table, pre {
   margin: 15px 0; }
@@ -123,7 +123,7 @@ ul :last-child, ol :last-child {
 dl {
   padding: 0; }
   dl dt {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: bold;
     font-style: italic;
     padding: 0;
@@ -258,7 +258,7 @@ pre code {
 .highlight pre {
   background-color: #f8f8f8;
   border: 1px solid #cccccc;
-  font-size: 13px;
+  font-size: 10px;
   line-height: 19px;
   overflow: auto;
   padding: 6px 10px;
@@ -267,7 +267,7 @@ pre code {
 pre {
   background-color: #f8f8f8;
   border: 1px solid #cccccc;
-  font-size: 13px;
+  font-size: 10px;
   line-height: 19px;
   overflow: auto;
   padding: 6px 10px;
