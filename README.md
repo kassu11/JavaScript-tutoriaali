@@ -436,7 +436,7 @@ console.log(10 < 5); // palauttaa joko "true" tai "false"
 // "false" on epätosi, "true" on tosi
 
 console.log(luku == 32) // Voit myös testata, onko joku tasan tietty arvo
-console.log(luku != 32) // Tämä on päinastoin, onko se jokin muu kun 32, jos on 32 palauttaa "false"
+console.log(luku != 32) // Tämä on päinvastoin, onko se jokin muu kun 32, jos on 32 palauttaa "false"
 
 if(luku != 2) {
   if("c" > "b") {
