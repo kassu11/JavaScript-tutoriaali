@@ -1052,7 +1052,7 @@ console.log(Math.round(8.9), Math.round(3.1), Math.round(7.5)); // Pyöristää 
 ### Tehtävänanto
 
 - Tallenna etsittävä `teksti olioon`
-- Sovellus etsii `onko` tekstissä yhtään `kirjainta keksi kertaa`
+- Sovellus etsii `onko` tekstissä yhtään `kirjainta kaksi kertaa`
   - `Ensimmäinen` kirjain jota löytyy `2 kertaa kirjoitetaan konsoliin`
   - Jos samoja kirjaimia ei tekstissä `ole yli 1`, `sanotaan siitä konsoliin`
 
@@ -1110,14 +1110,14 @@ for(let i = 0; i < 100; i++) {
 
 ```js
 const teksti = "koiran ruoka on lopussa";
-const tarkistetutKirjaimet = [];
+let tarkistetutKirjaimet = "";
 let tuplakirjain = "";
 
 for(const kirjain of teksti) {
   if(tarkistetutKirjaimet.indexOf(kirjain) !== -1) {
     tuplakirjain = kirjain;
     break;
-  } else tarkistetutKirjaimet.push(kirjain);
+  } else tarkistetutKirjaimet += kirjain;
 }
 
 if(tuplakirjain) {
