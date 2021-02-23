@@ -1065,9 +1065,13 @@ ensimmäinen tuplakirjain tekstissä "koiran ruoka on lopussa" on "r"
 
 tekstissä "kirja" ei ollut yhtään tuplakirjainta
 
+tekstissä "Aa" ei ollut yhtään tuplakirjainta
+
 ensimmäinen tuplakirjain tekstissä "erkin omena" on "e"
 
 ensimmäinen tuplakirjain tekstissä "kissa kehrää" on "s"
+
+ensimmäinen tuplakirjain tekstissä "A B C D" on " "
 ```
 
 </details>
