@@ -1,23 +1,46 @@
+# Sisällysluettelo
+
+- [JavaScript opettelu tehtäviä](#javascript-opettelu-tehtäviä)
+  - [Tehtävä 1.0 | Oliot ja konsoliin kirjoittaminen](#tehtävä-10--oliot-ja-konsoliin-kirjoittaminen)
+    - [Tehtävä 1.1 | Hei maailma](#tehtävä-11--hei-maailma)
+    - [Tehtävä 1.2 | Olion muokkaamista](#tehtävä-12--olion-muokkaamista)
+  - [Tehtävä 2.0 | .repeat(), .length ja matikka operaattorit](#tehtävä-20--repeat-length-ja-matikka-operaattorit)
+    - [Tehtävä 2.1 | Täydellinen neliö](#tehtävä-21--täydellinen-neliö)
+    - [Tehtävä 2.2 | Tekstin alleviivausta](#tehtävä-22--tekstin-alleviivausta)
+    - [Tehtävä 2.3 | Teksti boxi](#tehtävä-23--teksti-boxi)
+    - [Tehtävä 2.4 | Neliö konsoliin](#tehtävä-24--neliö-konsoliin)
+  - [Tehtävä 3.0 | Tietoa if, >, <, &&, ||, == ja != operaattoreista](#tehtävä-30--tietoa-if------ja--operaattoreista)
+    - [Tehtävä 3.1 | Positiivinen ja negatiivinen](#tehtävä-31--positiivinen-ja-negatiivinen)
+    - [Tehtävä 3.2 | Digitaaliset numerot](#tehtävä-32--digitaaliset-numerot)
+    - [Tehtävä 3.3 | Salasanan tarkistus](#tehtävä-33--salasanan-tarkistus)
+    - [Tehtävä 3.4 | Jaolliset numerot](#tehtävä-34--jaolliset-numerot)
+    - [Tehtävä 3.5 | Tekstin keskitys](#tehtävä-35--tekstin-keskitys)
+
+<br>
+
 # JavaScript opettelu tehtäviä
 
 ## Tehtävien rakenne ja kuvaus
 
 - Tehtävät menevät suunnilleen `vaikeus` järjestyksessä
+  - Jokainen `.0` tehtävä, neuvoo jotain uutta
+  - Jos olet omasta mielestä oppinut .0 asiat, voit mennä seuraavaan numeroon
 - Tehtävien ohessa opetetaan tarpeelliset koodit, joilla tehtävän voi suorittaa
 - Aikaisemmin neuvottuja koodeja ei neuvota uudelleen
 - Jokaisessa tehtävässä on lopussa `vastaus`, miten tehtävän voi suorittaa
   - Tehtäviin voi olla `useita oikeita vastauksia`
   - Kunhan lopputulos on sama, kun mitä kysyttiin, tehtävä on suoritettu
   - Kannattaa silti katsoa `"malli" vastausta`, jos siitä oppisi jotain
+  - Jos tehtävää ei millään, saa läpi, vastauksen voi ajatuksella käydä läpi
 - Tehtävien lopussa on myös `vinkkejä` jos, olet jumissa
 
 ---
 
 <br>
 
-## Tehtävä 0 | Opastus
+## Tehtävä 1.0 | `Oliot` ja `konsoliin kirjoittaminen`
 
-### Tehtävänanto
+### Opetus materiaali
 
 - Tässä on vähän aloitus koodia jotta pääset alkuun, ja näet miten asiat toimii
 - Kopio koodi itsellesi ja leiki sillä vähän, kunnes tajuut miten se toimii
@@ -48,6 +71,9 @@ console.log("lukuB on nyt" + lukuA) // "+" toimii myös, mutta ei luo väliä
 lukuA = lukuA + 50; // Voit myös tehdä näin, joka ei olisi mahdollista normaalissa matikassa
 console.log(lukuA);
 
+let tekstiA = "miten menee";
+console.log(tekstiA);
+
 lukuC = 4;  // Jos yrität muuttaa "lukuC", tulee error, koska olio luotiin "const" termillä, joka estää muutoksen
 ```
 
@@ -61,6 +87,7 @@ Voit myös laittaa teksti tänne
 lukuA on nyt 15
 lukuB on nyt15
 65
+miten menee
 > Uncaught TypeError: Assignment to constant variable.
     at code.js:26
 ```
@@ -69,7 +96,7 @@ lukuB on nyt15
 
 <br>
 
-## Tehtävä 1 | Hei maailma
+## Tehtävä 1.1 | Hei maailma
 
 ### Tehtävänanto
 
@@ -150,7 +177,65 @@ console.log(`Hei, olen ${ika} vuotta vanha ja nimeni on ${nimi}!`); // tää on 
 
 ---
 
-### Uutta tietoa `.repeat()`, `.length` ja matikka `operaattoreista`
+<br>
+
+## Tehtävä 1.2 | Olion muokkaamista
+
+### Tehtävänanto
+
+- Tee `yksi olio` johon tallennat aloitus arvon `5`
+- `Olion nimi` on `muuttuja`
+- Tee uusi rivi ja `lisää` olion arvoon `5`
+- Uudella rivillä `lisää` olion arvoon teksti `on numero` perään
+- Tehtävässä pitää tulostaa vastas `console.log(muuttuja)` komennolla
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+10 on numero
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+```js
+let teksti = "oho";
+teksti = teksti + ", onpa kaunis päivä";
+console.log(teksti);
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+let muuttuja = 5;
+muuttuja = muuttuja + 5;
+muuttuja = muuttuja + " on numero";
+console.log(muuttuja);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 2.0 | `.repeat()`, `.length` ja matikka `operaattorit`
+
+### Selitykset
+
+- `.length` kertoo tekstin pituuden
+- `.repeat()` toistaa tietyn tekstijanan annetus numeron verran
+  - Jos laittaa `0`, se ei palauta tekstiä ollenkaan
+- `\n` tämä on rivin vaihto koodikielenä
+  - Jos haluat laittaa montarivisiä tekstejä konsooliin, käytä `\n`
+- `\t` on tabulaattori, eli vähän isompi väli perjaattessa
+
+### Opetus materiaali
 
 ```js
 const viiva = "#".repeat(15); // toistaa merkin "#" 15 kertaa
@@ -166,7 +251,7 @@ console.log("8 - 3 on", 8 - 3);
 console.log("10 jaettuna 2 on", 10 / 2);
 console.log("5 kertaa 5 on", 5 * 5);
 console.log("2 potenssiin 3 on", 2 ** 3);
-console.log("42 jakojäännys on", 42 % 10, "jos se jaetaan 10");
+console.log("42 jakojäännös 10 on", 42 % 10);
 console.log("16 neliöjuuri on", Math.sqrt(16));
 
 console.log(viiva.repeat(2));
@@ -188,7 +273,7 @@ tämä viiva on 15 merkkiä pitkä
 10 jaettuna 2 on 5
 5 kertaa 5 on 25
 2 potenssiin 3 on 8
-42 jakojäännys on 2 jos se jaetaan 10
+42 jakojäännös 10 on 2
 16 neliöjuuri on 4
 ##############################
 		tekstii
@@ -202,18 +287,103 @@ tämä viiva on 15 merkkiä pitkä
 
 <br>
 
-## Tehtävä 2 | Tekstin alleviivausta
+## Tehtävä 2.1 | Täydellinen neliö
+
+### Tehtävänanto
+
+- Tee konsoliin neliö `#` merkeistä
+- Neliön `koko` määritetään `oliolla`
+  - Jos `olion arvo` on esim `5`, tulee neliön olla `5x5 kokoinen`
+
+<br>
+
+### 3 Esimerkki tulosta
+
+```js
+##
+##
+
+#####
+#####
+#####
+#####
+#####
+
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Käytä `.repeat()` komentoa, joka toistaa tekstin monta kertaa haluat
+
+```js
+console.log("e".repeat(5)) // Tekee 5 "e" kirjainta
+console.log("ha".repeat(8));
+```
+
+```js
+eeeee
+hahahahahahahaha
+```
+
+<details>
+<summary>Vinkki 2</summary>
+
+- Voit tehdä rivin vaihdon `"\n"` tekstillä
+
+```js
+console.log("Rivi1\nRivi2\nRivi3");
+```
+
+```js
+Rivi1
+Rivi2
+Rivi3
+```
+
+</details>
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const koko = 5;
+const rivi = "#".repeat(koko) + "\n";
+
+console.log(rivi.repeat(koko));
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 2.2 | Tekstin alleviivausta
 
 ### Tehtävänanto
 
 - Tee `olio` johon voi tallentaa `tekstiä`
-- Olion teksti kirjoitetaan konsooliin ja se saa alleviivauksen
-- Alleviivaus on tehty vaikka `#` merkistä
-  - Viiva on aina yhtäpitkä kun olio teksti
+- Olion `teksti` kirjoitetaan konsooliin ja se saa `alleviivauksen`
+- `Alleviivaus` on tehty vaikka `#` merkistä
+  - Viiva on `aina yhtäpitkä kun olio teksti`
+- Tehtävässä `saa käyttää` vain yhtä `console.log()` komentoa 
 
 <br>
 
-### Tässä 3 esimerkki tulosta
+### Tässä 4 esimerkki tulosta
 
 ```js
 tää on teksti
@@ -234,27 +404,6 @@ u
 
 - Voit käyttää `.length` komentoa jos haluat tietää tekstin pituuden
 
-<details>
-<summary>Vinkki 2</summary>
-
-- Käytä `.repeat()` komentoa, joka toistaa tekstin monta kertaa haluat
-
-```js
-console.log("e".repeat(5)) // Tekee 5 "e" kirjainta
-console.log("ha".repeat(8));
-```
-
-<br>
-
-Odotettu lopputulos
-
-```js
-eeeee
-hahahahahahahaha
-```
-
-</details>
-
 </details>
 
 <details>
@@ -273,7 +422,7 @@ console.log("#".repeat(teksti.length));
 
 <br>
 
-## Tehtävä 3 | Teksti boxi
+## Tehtävä 2.3 | Teksti boxi
 
 ### Tehtävänanto
 
@@ -305,23 +454,6 @@ console.log("#".repeat(teksti.length));
 ```
 
 <details>
-<summary>Vinkki 1</summary>
-
-- Voit tehdä rivin vaihdon `"\n"` tekstillä
-
-```js
-console.log("Rivi1\nRivi2\nRivi3");
-```
-
-```js
-Rivi1
-Rivi2
-Rivi3
-```
-
-</details>
-
-<details>
 <summary>Vastaus</summary>
 
 ```js
@@ -338,7 +470,7 @@ console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
 
 <br>
 
-## Tehtävä 4 | Neliö konsoliin
+## Tehtävä 2.4 | Neliö konsoliin
 
 ### Tehtävänanto
 
@@ -390,6 +522,20 @@ console.log(viiva + "#", tyhja, "#\n# ", teksti, " #\n#", tyhja, "#\n" + viiva);
 ```
 
 <details>
+<summary>Vinkit 1</summary>
+
+```js
+const rahat = 100;
+console.log("Puolet", rahat + "€ on", rahat/2 + "€");
+```
+
+```js
+Puolet 100€ on 50€
+```
+
+</details>
+
+<details>
 <summary>Vastaus</summary>
 
 ```js
@@ -404,7 +550,17 @@ console.log(rivi + tyhjaRivi.repeat(nelionKoko / 2 - 2) + rivi);
 
 ---
 
-### Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
+<br>
+
+## Tehtävä 3.0 | Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
+
+### Selitykset
+
+- Koodamisen tärkein komento on `if` ja `else` lauseet
+- Voit käyttää `if` lauseita monimutkaisiin tai yksinkertaisiin kyselyihin
+  - Ilman näitä ei voitaisi tehdä mitään valinta kysymyksia tai muita logiikka asioita
+
+### Opetus materiaali
 
 ```js
 let luku = 5; // Jos muutat tätä lukua, huomaat että vastaus vaihtuu
@@ -502,18 +658,18 @@ Tämä tekee errorin, koska olio luotiin if lauseen sisällä, eikä siihen ole 
 
 <br>
 
-## Tehtävä 5 | Positiivinen ja negatiivinen
+## Tehtävä 3.1 | Positiivinen ja negatiivinen
 
 ### Tehtävänanto
 
 - Tee sovellus joka palauttaa konsoliin `tietoa numerosta`
 - Sovellus kertoo onko numero `positiivinen` vai `negatiivinen`
-- Jos numero on nolla se sanoo `"Lukusi on 0"`
+- Jos numero on `nolla` se sanoo `"Lukusi on 0"`
 - Jos laittamasi arvo `ei ole numero`, sanoo konsoli siitä jotain
 
 <br>
 
-### Esimkerkki vastauksia
+### 7 Esimerkki tulosta
 
 ```js
 
@@ -610,6 +766,313 @@ else console.log(`"${luku}" ei ole numero!`)
 </details>
 
 ---
+
+<br>
+
+## Tehtävä 3.2 | Digitaaliset numerot
+
+### Tehtävänanto
+
+- Luo `olio` johon `tallennetaan` luku `arvo 0-9 väliltä`
+- `Arvosta` tulostetaan konsooliin digitaalinen numero `#` merkkejä käyttäen
+- Mikäli olion arvo ei ole `0-9` välillä, tulee siitä `viesti konsoliin`
+- Esimerkki numerot alhaalla
+  - Voit tyylitellä itse, jos haluat
+    ```js
+    ###   #   ###  ###  # #  ###  ###  ###  ###  ###
+    # #  ##     #    #  # #  #    #      #  # #  # #
+    # #   #   ###  ###  ###  ###  ###    #  ###  ###
+    # #   #   #      #    #    #  # #   #   # #    #
+    ###  ###  ###  ###    #  ###  ###   #   ###  ###
+    ```
+
+<br>
+
+### 4 Esimerkki tulosta
+
+```js
+###
+  #
+###
+  #
+###
+
+###
+  #
+  #
+ # 
+ # 
+
+Antamasi arvo ei ollut numero 0-9 väliltä
+
+###
+# #
+###
+  #
+###
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const numero = 5;
+
+if(numero == 0) {
+  console.log("###\n# #\n# #\n# #\n###\n");
+} else if(numero == 1) {
+  console.log(" # \n## \n # \n # \n###\n");
+} else if(numero == 2) {
+  console.log("###\n  #\n###\n#  \n###\n");
+} else if(numero == 3) {
+  console.log("###\n  #\n###\n  #\n###\n");
+} else if(numero == 4) {
+  console.log("# #\n# #\n###\n  #\n  #\n");
+} else if(numero == 5) {
+  console.log("###\n#  \n###\n  #\n###\n");
+} else if(numero == 6) {
+  console.log("###\n#  \n###\n# #\n###\n");
+} else if(numero == 7) {
+  console.log("###\n  #\n  #\n # \n # \n");
+} else if(numero == 8) {
+  console.log("###\n# #\n###\n# #\n###\n");
+} else if(numero == 9) {
+  console.log("###\n# #\n###\n  #\n###\n");
+} else {
+  console.log("Antamasi arvo ei ollut numero 0-9 väliltä");
+}
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 3.3 | Salasanan tarkistus
+
+- Tee sovellus joka tarkistaa miten `turvallinen salasanasi on`
+  - Jos salasana on `alle 5 merkkiä`, se on `liian lyhyt`
+  - Jos salasanassa on `alle 9 merkkiä`, se on `keskiverto`
+  - Jos salasana on `alle 20 merkkiä` se on `pitkä`
+  - Jos salasana on `yli 20 merkkiä` se on `liian pitkä`
+  - Mikäli käyttäjä `ei laita salasana`a sanotaan siitä konsooliin
+- Salasanan `turvallisuus kerrotaan konsooliin`, ja `salansana näkyy` siinä `salattuna`
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+salasanasi ******* on keskiverto
+
+salasanasi *** on liian lyhyt
+
+salasanasi ********* on pitkä
+
+salasanasi ************** on liian pitkä
+
+laita salasana
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const salasana = "";
+
+if(salasana.length == 0) {
+  console.log("laita salasana");
+} else if(salasana.length < 5) {
+  console.log("salasanasi", "*".repeat(salasana.length), "on liian lyhyt");
+} else if(salasana.length < 9) {
+  console.log("salasanasi", "*".repeat(salasana.length), "on keskiverto");
+} else if(salasana.length < 20) {
+  console.log("salasanasi", "*".repeat(salasana.length), "on pitkä");
+} else {
+  console.log("salasanasi", "*".repeat(salasana.length), "on liian pitkä");
+}
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 3.4 | Jaolliset numerot
+
+### Tehtävänanto
+
+- Tee sovellus joka `testaa` onko luku `jaollinen` `3`, `4` tai `7`
+- `Tarkistettava` luku tallennetaan `olioon`
+- `Millä` luku `on jaollinen` kerrotaan konsoliin
+- Jos luku `ei ole jaollinen` millään `sanotaan siitä`
+- Mikäli luku on jaollinen `monella luvulla`, sanotaan `kaikki niistä millä sen voi jakaa` tasan
+
+<br>
+
+### 7 Esimerkki tulosta
+
+```js
+"12" on jaollinen numeroilla "3" ja "4"
+
+"5" ei olle jaollinen "3", "4" tai "7"
+
+"84" on jaollinen "3", "4" sekä "7"!
+
+"28" on jaollinen numeroilla "4" ja "7"
+
+"14" on jaollinen numeroilla "7"
+
+"8" on jaollinen numeroilla "4"
+
+"abc" ei olle jaollinen "3", "4" tai "7"
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- jakojäännöksen voi laskea `%` merkillä
+- Jakojäännöstä voi ajatella niikun jakaisi karkkia
+  - Jos yrität jakaa `5` karkkia `6` ihmiselle eli `5 % 6`
+    - jää yli `5` karkkia, koska niitä ei voi jakaa tasaisesti
+  - `7 % 6` jää yli `1` karkki
+  - `6 % 6` jää yli `0`, koska kaikki karkit jaettiin tasan 
+
+```js
+console.log(13 % 6);
+console.log(12 % 6);
+console.log(17 % 6);
+console.log(5 % 6);
+
+if(12 % 6 == 0) console.log("on jaollinen kuudella");
+```
+
+```js
+1
+0
+5
+5
+on jaollinen kuudella
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const numero = 56;
+let jaolliset = "";
+
+if(numero % 3 == 0 && numero % 4 == 0 && numero % 7 == 0) {
+  console.log(`"${numero}" on jaollinen "3", "4" sekä "7"!`);
+} else {
+  if(numero % 3 == 0) {
+    if(jaolliset.length > 0) jaolliset = jaolliset + ` ja "3"`;
+    else jaolliset = `"3"`;
+  } if(numero % 4 == 0) {
+    if(jaolliset.length > 0) jaolliset = jaolliset + ` ja "4"`;
+    else jaolliset = `"4"`;
+  } if(numero % 7 == 0) {
+    if(jaolliset.length > 0) jaolliset = jaolliset + ` ja "7"`;
+    else jaolliset = `"7"`;
+  }
+
+  if(jaolliset.length > 1) {
+    console.log(`"${numero}" on jaollinen numeroilla ${jaolliset}`);
+  } else if(jaolliset.length > 0) {
+    console.log(`"${numero}" on jaollinen ${jaolliset}!`);
+  } else {
+    console.log(`"${numero}" ei olle jaollinen "3", "4" tai "7"`);
+  } 
+}
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 3.5 | Tekstin keskitys
+
+### Tehtävänanto
+
+- Luo `olio` johon laitat boxin `minimi leveys`
+- Tee `tekstille olio`, johon laitetaan `boxiin ilmestyvä teksti`
+- `Teksti` tulee piirtää konsoliin, ja sen `ympärillä` on reunat `#` merkeistä
+  - `Teksti` on `keskitetty` `vasemmalta` ja `oikealta` päin
+  - Jos tekstiä `ei voi keskittää tasaisesti`, tulee reunoista `yksi isompi`
+- Jos `teksti on isompi kun minimi` laatikon koko, tulee se `venymään tekstin mukana`
+  - `Reinoissa pitää aina olla` vähintään `yksi väli`, `oikeilla` ja `vasemmalla`
+
+<br>
+
+### 7 Esimerkki tulosta
+
+```js
+################
+#  <-- 16 -->  #
+################
+
+#################
+#  <-- 16! -->  #
+#################
+
+#################
+#      -_-      #
+#################
+
+###################
+# saippuakauppias #
+###################
+
+##########################################
+# saippuakauppias menee myymään saippuaa #
+##########################################
+
+########################
+#      <-- 23 -->      #
+########################
+
+#######################
+#     <-- 23! -->     #
+#######################
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "tekstiä";
+const maxPituus = 23;
+
+if(teksti.length < maxPituus - 2) {
+  if((maxPituus - teksti.length) % 2 == 0) { // Luku on parillinen
+    const valienMaara = (maxPituus - teksti.length) / 2 - 1;
+    const valit = " ".repeat(valienMaara);
+    console.log("#".repeat(maxPituus) + "\n#" + valit + teksti + valit + "#\n" + "#".repeat(maxPituus));
+  } else { // Luku ei ole parillinen
+    const valienMaara = (maxPituus + 1 - teksti.length) / 2 - 1;
+    const valit = " ".repeat(valienMaara);
+    console.log("#".repeat(maxPituus + 1) + "\n#" + valit + teksti + valit + "#\n" + "#".repeat(maxPituus + 1));
+  }
+} else {
+  const pituus = teksti.length + 4;
+  console.log("#".repeat(pituus) + "\n#", teksti, "#\n" + "#".repeat(pituus));
+}
+```
+
+</details>
+
+---
+
+<br>
+
+
+
 
 ### Materiaalia `for` loopista, `+=` ja `-=` operaattoreista
 
