@@ -15,6 +15,19 @@
     - [Tehtävä 3.3 | Salasanan tarkistus](#tehtävä-33--salasanan-tarkistus)
     - [Tehtävä 3.4 | Jaolliset numerot](#tehtävä-34--jaolliset-numerot)
     - [Tehtävä 3.5 | Tekstin keskitys](#tehtävä-35--tekstin-keskitys)
+  - [Tehtävä 4.0 | Materiaalia for loopista, += ja -= operaattoreista](#tehtävä-40--materiaalia-for-loopista--ja---operaattoreista)
+    - [Tehtävä 4.1 | Ensimmäinen ja viimeinen kirjain](#tehtävä-41--ensimmäinen-ja-viimeinen-kirjain)
+    - [Tehtävä 4.2 | Portaitten teko](#tehtävä-42--portaitten-teko)
+    - [Tehtävä 4.3 | Kolmion piirtäminen](#tehtävä-43--kolmion-piirtäminen)
+    - [Tehtävä 4.4 | Suorakulmion teko for loopilla](#tehtävä-44--suorakulmion-teko-for-loopilla)
+    - [Tehtävä 4.5 | Alleviivaus väleillä](#tehtävä-45--alleviivaus-väleillä)
+    - [Tehtävä 4.6 | Kertoma laskuri](#tehtävä-46--kertoma-laskuri)
+    - [Tehtävä 4.7 | Tekstistä etsimistä](#tehtävä-47--tekstistä-etsimistä)
+    - [Tehtävä 4.8 | Pyramiidin teko](#tehtävä-48--pyramiidin-teko)
+  - [Tehtävä 5.0 | Opetus materiaalia .indexOf(), .toUpperCase(), .toLowerCase() ja pyöristys operaattoreista](#tehtävä-50--opetus-materiaalia-indexOf-toUpperCase-toLowerCase-ja-pyöristys-operaattoreista)
+    - [Tehtävä 5.1 | Tuplakirjainten löytäminen](#tehtävä-51--tuplakirjainten-löytäminen)
+    - [Tehtävä 5.2 | Palindromin tunnistus](#tehtävä-52--palindromin-tunnistus)
+    - [Tehtävä 5.3 | Isot alkukirjaimet](#tehtävä-53--isot-alkukirjaimet)
 
 <br>
 
@@ -556,9 +569,20 @@ console.log(rivi + tyhjaRivi.repeat(nelionKoko / 2 - 2) + rivi);
 
 ### Selitykset
 
-- Koodamisen tärkein komento on `if` ja `else` lauseet
-- Voit käyttää `if` lauseita monimutkaisiin tai yksinkertaisiin kyselyihin
-  - Ilman näitä ei voitaisi tehdä mitään valinta kysymyksia tai muita logiikka asioita
+- Koodaamisen tärkein komento on `if` ja `else` lauseet
+- Voit käyttää `if` lauseita `monimutkaisiin` tai `yksinkertaisiin` kyselyihin
+  - Ilman näitä ei voitaisi tehdä mitään `valinta kysymyksia` tai muita `logiikka` asioita
+  - `if` lause `testaaa` palauttaako ehto `true` vai `false` arvon
+  - `if` lauseen `suoritettava koodi`, laitetaan `{}` aaltosulkeisiin
+    - Kaikki `oliot` jotka on `luotu aaltosulkeiden sisällä`, pysyy siellä, eikä niitä voi `käsitellä` niitten `ulkoupuolella`
+  - `if` lauseen `ehto` laitetaan `()` sulkeisiin
+    - Jos `arvo` on `true`
+      - Suorittaa `if` lause kaiken `koodin mikä sen sisälle on` laitettu suorittumaan
+    - Jos `arvo` on `false`
+      - Ohittaa `if` kaiken sen `sisällä olevan koodin`
+      - Jos `if` lauseen `jälkeen` on `else` tai `else if`, suorittaa koodi sen
+        - `else if` lauseen ehto tarkistetaan myös vastaavasti, ja jatketaan samaan malliin
+        - `else` lauseessa ei ole `ehtoa`, ja `suorittuu` aina jos edeltävä `if` tai `else if` lause `ei suoritu`
 
 ### Opetus materiaali
 
@@ -1071,10 +1095,36 @@ if(teksti.length < maxPituus - 2) {
 
 <br>
 
+## Tehtävä 4.0 | Materiaalia `for` loopista, `+=` ja `-=` operaattoreista
 
+### Selitykset
 
+- Jos haluat `nostaa` tai `laskea` `yhdellä olion arvoa` voit käyttää `++` tai `--`
+  - Jos meillä on luotu tämmöinen olio `let lukuA = 2`
+    - Sitten laitetaan `lukuA++` niin olion arvo muuttui `3`
+    - Jos sitten laitetaan `lukuA--`, se vähentää olion arvoa yhdellä, eli tulee `2`
+- `+=` `lisää` olion arvoon `laittamasi arvon`
+  - Jos meillä on tämmöinen olio `let testA = 5`
+    - `testA += 10` muuttaisi `testA` olion arvon `15`, koska `5 + 10` on `15`
+    - `testA += "text"` muuttaa arvoksi `"5text"`
+- `-=` `vähentää` olion arvosta `laittamasi arvon`
+  - Toisin kuin `+=` niin `-=` toimii vain numeroilla, ja muuten se palauttaa `NaN`
+    - `NaN` on JavaScript arvo jos luku `ei ole numero`
+  - Jos meillä on tämmöinen olio `let testB = 5`
+    - `testB -= 10` muuttaisi `testB` olion arvon `-5`, koska `5 - 10` on `-5`
+    - `testB -= "text"` muuttaa arvoksi `NaN`
+- `for` looppi koostuu `3 osasta`, jotka käydään läpi eri osassi looppia
+  - `Ensimmäinen osa` on `aloitus koodi`, eli tämä suoritetaan `aina kun loop suorittuu ekan kerran`
+  - `Toinen osa` on `if ehto`, joka kertoo miten kauan `loop on käynnissä`
+    - `Niin kauan` kun ehto palauttaa `true`, pysyy `loop päällä`
+    - Tämä ehto `tarkistetaan` joka `loopin jälkeen`, `ja ennen kun loop aloitetaan`
+  - `Viimeinen osa` on koodi, joka suorittuu aina `joka loopin jälkeen`
+    - `Tätä koodia ei suoriteta ensimmäisellä loopilla`, mutta sen `jälkeen` se `suorittuu joka looppi`
+    - Tämä suorittuu myös `aina ennen toisen osaa`, jonka jälkeen `toinen osa tarkistetaan`
+  - Loopin virallinen osien `suoritus järjestys` on
+    - `1` > `2` > `suorittaa koodin sisällä` > `3` > `2` > `koodi säsällä` > `3` > `2` > ...
 
-### Materiaalia `for` loopista, `+=` ja `-=` operaattoreista
+### Oppimis materiaali
 
 ```js
 let luku = 5;
@@ -1155,72 +1205,39 @@ tekstin "kauppa" kirjain "5" on: a
 
 <br>
 
-## Tehtävä 6 | Suorakulmion teko for loopilla
+## Tehtävä 4.1 | Ensimmäinen ja viimeinen kirjain
 
 ### Tehtävänanto
 
-- Tee `10` korkea ja `35` leveä suorakolmio käyttäen `#` merkkiä
-- Tehtässä saat käyttää vaan yhtä `console.log()` komentoa
-- Et saa käyttää `.repeat()` koodia
-- Joudut hyödyntämään `for` looppeja jotta saat tehtävän tehtyä
+- Tee sovellus joka `etsii` tekstistä `ensimmäisen` ja `viimeisen kirjaimen`
+  - `Kirjaimet` kerrotaan `konsooliin` `tekstin kanssa`
+- Tarkistettava `teksti` `tallennetaan olioon`
+- Jos tekstiä `ei anneta` `sanotaan siitä konsoliin`
 
 <br>
 
-### Odotettu lopputulos
+### 5 Esimerkki tulosta
 
 ```js
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
+tekstin "alumiini" ensimmäinen kirjain on "a" ja vika kirjain on "i"
+
+tekstin "t" ensimmäinen kirjain on "t" ja vika kirjain on "t"
+
+tekstin "olio" ensimmäinen kirjain on "o" ja vika kirjain on "o"
+
+kirjoita jokin teksti tutkittavaksi
+
+tekstin "tosi pitkä sana jossa on välejä" ensimmäinen kirjain on "t" ja vika kirjain on "ä"
 ```
 
 <details>
 <summary>Vinkki 1</summary>
 
-```js
-const luku1 = 5;
-const luku2 = 3;
-
-for(let i = 0; i < luku1; i++) {
-
-  // Voit laittaa for looppeja sisäkkäin O_o
-  for(let i2 = 0; i2 < luku2; i2++) {
-    console.log("luku1:", i, "luku2:", i2);
-  }
-
-  if(i < luku1 - 1) console.log("#".repeat(17));
-}
-```
-
-Esimerkin lopputulos
+- Voit käyttää `[]` kulmasulkeita `tektiis`, jos haluat valita `tietyn kirjaimen`
 
 ```js
-luku1: 0 luku2: 0
-luku1: 0 luku2: 1
-luku1: 0 luku2: 2
-#################
-luku1: 1 luku2: 0
-luku1: 1 luku2: 1
-luku1: 1 luku2: 2
-#################
-luku1: 2 luku2: 0
-luku1: 2 luku2: 1
-luku1: 2 luku2: 2
-#################
-luku1: 3 luku2: 0
-luku1: 3 luku2: 1
-luku1: 3 luku2: 2
-#################
-luku1: 4 luku2: 0
-luku1: 4 luku2: 1
-luku1: 4 luku2: 2
+const teksti = "ABCDEFG";
+console.log(teksti[2]);
 ```
 
 </details>
@@ -1229,18 +1246,15 @@ luku1: 4 luku2: 2
 <summary>Vastaus</summary>
 
 ```js
-let text = "";
-const leveys = 35;
-const korkeus = 10;
+const teksti = "kirja";
+const eka = teksti[0];
+const vika = teksti[teksti.length - 1];
 
-for(let y = 0; y < korkeus; y++) {
-  let rivi = "";
-  for(let x = 0; x < leveys; x++) {
-    rivi += "#";
-  } text += rivi + "\n";
+if(teksti.length > 0) {
+  console.log(`tekstin "${teksti}" ensimmäinen kirjain on "${eka}" ja vika kirjain on "${vika}"`);
+} else {
+  console.log("kirjoita jokin teksti tutkittavaksi");
 }
-
-console.log(text);
 ```
 
 </details>
@@ -1249,32 +1263,56 @@ console.log(text);
 
 <br>
 
-## Tehtävä 7 | Alleviivaus väleillä
+## Tehtävä 4.2 | Portaitten teko
 
 ### Tehtävänanto
 
-- Tee `tehtävä 2`, mutta alleviivaus ei mene `väleihin`
-- Jos tekstissä `ei ole välejä` se tekee samanlailla kun tehtävä 2
+- Tee sovellus joka piirtää konsoliin portaat `#` merkeistä
+- `Yksi` porras `koostuu 4` `#` merkistä
+- jokainen `askelma` menee `2 merkkiä oikealle`
+- Portaitten `lukumäärä` määritellään `oliolla`, johon laitetaan `numero arvo`
 
 <br>
 
-### Odotettu lopputulos
+### 3 Esimerkki tulosta
 
 ```js
-olen teksti jossa on välejä
-#### ###### ##### ## ######
+> 3
+####
+  ####
+    ####
+
+> 5
+####
+  ####
+    ####
+      ####
+        ####
+
+> 8
+####
+  ####
+    ####
+      ####
+        ####
+          ####
+            ####
+              ####
 ```
 
 <details>
 <summary>Vinkki 1</summary>
 
-- Voit käydä tekstin läpi `for` loopilla
+- Perus `for` loop pohja
+- Ekana luodaan `olio` nimeltä `i`, arvolla `0`
+- Sitten `tarkistetaan` onko `i` `pienempi` kun `10`
+  - Jos on suorittuu looppi
+  - `Aina` loopin suorittamisen jälkeen `i` olioon lisätään `1`
+- Kun `i` menee `yli 10`, loop loppuu, koska ehto palauttaa `false`
 
 ```js
-const text = "wow";
-
-for(let i = 0; i < text.length; i++) {
-  console.log(text[i]);
+for(let i = 0; i < 10; i++) {
+  console.log("Loop suoritettu", i);
 }
 ```
 
@@ -1284,15 +1322,11 @@ for(let i = 0; i < text.length; i++) {
 <summary>Vastaus</summary>
 
 ```js
-const teksti = "olen teksti jossa on välejä";
-let viiva = "";
+const rappuset = 10;
 
-for(let i = 0; i < teksti.length; i++) {
-  if(teksti[i] == " ") viiva += " ";
-  else viiva += "#";
+for(let rappunen = 0; rappunen < rappuset; rappunen++) {
+  console.log(" ".repeat(rappunen * 2) + "####");
 }
-
-console.log(teksti + "\n" + viiva);
 ```
 
 </details>
@@ -1301,114 +1335,7 @@ console.log(teksti + "\n" + viiva);
 
 <br>
 
-## Tehtävä 8 | Kertoma laskuri
-
-### Tehtävänanto
-
-- Tee `laskuri` joka laskee `annetun luvun kertoman`
-- Luvun `kertoma` eli `factorial` lasketaan näin
-  - Esim luvun `3` kertoma on `3 * 2 * 1 = 6`
-  - Luvun `6` kertoma on `6 * 5 * 4 * 3 * 2 * 1 = 120`
-- Tannennat haluamasi `kertoman luvun` olioon
-- Tulosta konsoliin `lasku yhtälö` ja `vastaus`
-
-<br>
-
-### 5 Esimerkki tapausta
-
-```js
-"7" kertoma on: 7 * 6 * 5 * 4 * 3 * 2 * 1 = 5040
-
-"1" kertoma on 1
-
-Laskuri ei tue negatiivisia numeroita
-
-"0" kertoma on 0
-
-"4" kertoma on: 4 * 3 * 2 * 1 = 24
-```
-
-<details>
-<summary>Vastaus</summary>
-
-```js
-const kertoma = 8;
-let vastaus = kertoma;
-let yhtälö = `${kertoma}`;
-
-for(let uusiLuku = kertoma - 1; uusiLuku > 0; uusiLuku--) {
-  vastaus *= uusiLuku;
-  yhtälö += " * " + uusiLuku;
-}
-
-if(kertoma < 0) console.log("Laskuri ei tue negatiivisia numeroita");
-else if(kertoma < 2) console.log(`"${kertoma}" kertoma on ${kertoma}`);
-else console.log(`"${kertoma}" kertoma on: ${yhtälö} = ${vastaus}`);
-```
-
-</details>
-
----
-
-<br>
-
-## Tehtävä 9 | Tekstistä etsimistä
-
-### Tehtävänanto
-
-- Tee `olio` johon `tallennat tektiä`
-- Tee toinen `olio` johon `tallennat tekstijonon` jota haluat `etsiä` edellisestä oliosta
-- Sovellus palauttaa konsoliin
-  - Tekstin `josta` etsitään
-  - Tekstin `mitä` etsitään
-  - `Monta kertaa` etsittävä teksti `löydettiin`
-
-<br>
-
-### Esimerkki tapauksia
-
-```js
-tekstistä "kauppa sulkeutuu viideltä" löytyi 1 kertaa teksti "ppa"
-
-tekstistä "kauppa sulkeutuu viideltä" löytyi 5 kertaa teksti "u"
-
-tekstistä "kauppa sulkeutuu viideltä" löytyi 1 kertaa teksti "sulkeutuu viideltä"
-
-tekstistä "yksi kaksi kolme neljä viisi" löytyi 4 kertaa teksti " "
-
-tekstistä "yksi kaksi kolme neljä viisi" löytyi 3 kertaa teksti "si"
-```
-
-<details>
-<summary>Vastaus</summary>
-
-```js
-const etsittavaTeksti = "asd";
-const teksti = "miten menee olen teksti";
-
-let etsiNumero = 0;
-let montaLoytynyt = 0;
-
-for(let kirjain of teksti) {
-  if(kirjain == etsittavaTeksti[etsiNumero]) {
-    etsiNumero++;
-    if(etsiNumero == etsittavaTeksti.length) {
-      montaLoytynyt++;
-      etsiNumero = 0;
-    }
-  } else etsiNumero = 0;
-}
-
-console.log(`tekstistä "${teksti}" löytyi ${montaLoytynyt} kertaa teksti "${etsittavaTeksti}"`);
-```
-
-</details>
-
----
-
-<br>
-
-## Tehtävä 10 | Kolmion piirtäminen
+## Tehtävä 4.3 | Kolmion piirtäminen
 
 ### Tehtävänanto
 
@@ -1468,7 +1395,333 @@ for(let i = 1; i <= koko; i++) {
 
 ---
 
-### Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
+<br>
+
+## Tehtävä 4.4 | Suorakulmion teko for loopilla
+
+### Tehtävänanto
+
+- Tee `10` korkea ja `35` leveä suorakolmio käyttäen `#` merkkiä
+- Tehtässä saat käyttää vaan yhtä `console.log()` komentoa
+- Koko `suorakulmio` pitää olla tallennettu `olioon`, joka tulostetaan konsoliin `for loopin ulkona`
+- Et saa käyttää `.repeat()` koodia
+- Joudut hyödyntämään `for` looppeja jotta saat tehtävän tehtyä
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+```js
+const luku1 = 5;
+const luku2 = 3;
+
+for(let i = 0; i < luku1; i++) {
+
+  // Voit laittaa for looppeja sisäkkäin O_o
+  for(let i2 = 0; i2 < luku2; i2++) {
+    console.log("luku1:", i, "luku2:", i2);
+  }
+
+  if(i < luku1 - 1) console.log("#".repeat(17));
+}
+```
+
+```js
+luku1: 0 luku2: 0
+luku1: 0 luku2: 1
+luku1: 0 luku2: 2
+#################
+luku1: 1 luku2: 0
+luku1: 1 luku2: 1
+luku1: 1 luku2: 2
+#################
+luku1: 2 luku2: 0
+luku1: 2 luku2: 1
+luku1: 2 luku2: 2
+#################
+luku1: 3 luku2: 0
+luku1: 3 luku2: 1
+luku1: 3 luku2: 2
+#################
+luku1: 4 luku2: 0
+luku1: 4 luku2: 1
+luku1: 4 luku2: 2
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+let text = "";
+const leveys = 35;
+const korkeus = 10;
+
+for(let y = 0; y < korkeus; y++) {
+  let rivi = "";
+  for(let x = 0; x < leveys; x++) {
+    rivi += "#";
+  } text += rivi + "\n";
+}
+
+console.log(text);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 4.5 | Alleviivaus väleillä
+
+### Tehtävänanto
+
+- Tee `tehtävä 2`, mutta alleviivaus ei mene `väleihin`
+- Jos tekstissä `ei ole välejä` se tekee samanlailla kun tehtävä 2
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+olen teksti jossa on välejä
+#### ###### ##### ## ######
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit käydä tekstin läpi `for` loopilla
+
+```js
+const text = "wow";
+
+for(let i = 0; i < text.length; i++) {
+  console.log(text[i]);
+}
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const teksti = "olen teksti jossa on välejä";
+let viiva = "";
+
+for(let i = 0; i < teksti.length; i++) {
+  if(teksti[i] == " ") viiva += " ";
+  else viiva += "#";
+}
+
+console.log(teksti + "\n" + viiva);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 4.6 | Kertoma laskuri
+
+### Tehtävänanto
+
+- Tee `laskuri` joka laskee `annetun luvun kertoman`
+- Luvun `kertoma` eli `factorial` lasketaan näin
+  - Esim luvun `3` kertoma on `3 * 2 * 1 = 6`
+  - Luvun `6` kertoma on `6 * 5 * 4 * 3 * 2 * 1 = 120`
+- Tannennat haluamasi `kertoman luvun` olioon
+- Tulosta konsoliin `lasku yhtälö` ja `vastaus`
+
+<br>
+
+### 5 Esimerkki tapausta
+
+```js
+"7" kertoma on: 7 * 6 * 5 * 4 * 3 * 2 * 1 = 5040
+
+"1" kertoma on 1
+
+Laskuri ei tue negatiivisia numeroita
+
+"0" kertoma on 0
+
+"4" kertoma on: 4 * 3 * 2 * 1 = 24
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const kertoma = 8;
+let vastaus = kertoma;
+let yhtälö = `${kertoma}`;
+
+for(let uusiLuku = kertoma - 1; uusiLuku > 0; uusiLuku--) {
+  vastaus *= uusiLuku;
+  yhtälö += " * " + uusiLuku;
+}
+
+if(kertoma < 0) console.log("Laskuri ei tue negatiivisia numeroita");
+else if(kertoma < 2) console.log(`"${kertoma}" kertoma on ${kertoma}`);
+else console.log(`"${kertoma}" kertoma on: ${yhtälö} = ${vastaus}`);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 4.7 | Tekstistä etsimistä
+
+### Tehtävänanto
+
+- Tee `olio` johon `tallennat tektiä`
+- Tee toinen `olio` johon `tallennat tekstijonon` jota haluat `etsiä` edellisestä oliosta
+- Sovellus palauttaa konsoliin
+  - Tekstin `josta` etsitään
+  - Tekstin `mitä` etsitään
+  - `Monta kertaa` etsittävä teksti `löydettiin`
+
+<br>
+
+### Esimerkki tapauksia
+
+```js
+tekstistä "kauppa sulkeutuu viideltä" löytyi 1 kertaa teksti "ppa"
+
+tekstistä "kauppa sulkeutuu viideltä" löytyi 5 kertaa teksti "u"
+
+tekstistä "kauppa sulkeutuu viideltä" löytyi 1 kertaa teksti "sulkeutuu viideltä"
+
+tekstistä "yksi kaksi kolme neljä viisi" löytyi 4 kertaa teksti " "
+
+tekstistä "yksi kaksi kolme neljä viisi" löytyi 3 kertaa teksti "si"
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const etsittavaTeksti = "asd";
+const teksti = "miten menee olen teksti";
+
+let etsiNumero = 0;
+let montaLoytynyt = 0;
+
+for(let kirjain of teksti) {
+  if(kirjain == etsittavaTeksti[etsiNumero]) {
+    etsiNumero++;
+    if(etsiNumero == etsittavaTeksti.length) {
+      montaLoytynyt++;
+      etsiNumero = 0;
+    }
+  } else etsiNumero = 0;
+}
+
+console.log(`tekstistä "${teksti}" löytyi ${montaLoytynyt} kertaa teksti "${etsittavaTeksti}"`);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 4.8 | Pyramiidin teko
+
+### Tehtävänanto
+
+- Tee konsoliin pyramiidi `*` merkeistä
+- Tehtävässä `saa käyttää vaan yhtä console.log()` lausetta
+- Pyramiidin `koko` määritetään `oliolla`
+  - `Olio` kertoo pyramiidin `pohjan leveyden`
+  - Leveys `pyöristetään alaspäin`, esim `4 leveys olis 3`
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+> 15
+       *
+      ***
+     *****
+    *******
+   *********
+  ***********
+ *************
+***************
+
+> 4
+ *
+***
+
+> 6
+  *
+ ***
+*****
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Voit käyttää `%` matikka operaattoria laskemaan `jakojäännöksen`
+- Jakojäännöksellä voit helposti tarkistaa onko luku `parinninen` vai ei
+
+```js
+if(120 % 2 == 0) console.log("luku 120 on parinninen");
+if(132 % 3 == 0) console.log("luku 132 on jaollinen 3");
+
+console.log(11 % 5) // "11" menee lukuun "5" kaksi kertaa, ja siitä jää 1 yli
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const koko = 15;
+let pyramiidi = "";
+let valit = koko / 2;
+// tarkistaa onko luku jaollinen 2, jos on pyöristää alaspäin
+if(koko % 2 == 0) valit = (koko - 1) / 2;
+
+
+for(let i = 1; i <= koko; i += 2) {
+  pyramiidi += " ".repeat(valit--) + "*".repeat(i) + "\n";
+} if(koko > 0) console.log(pyramiidi);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 5.0 | Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
 
 ```js
 // Etsii tekstistä tietyn kirjain arvon, ja palauttaa sen index numeron
@@ -1510,7 +1763,8 @@ console.log(Math.round(8.9), Math.round(3.1), Math.round(7.5)); // Pyöristää 
 
 <br>
 
-## Tehtävä 11 | Tuplakirjainten löytäminen
+
+## Tehtävä 5.1 | Tuplakirjainten löytäminen
 
 ### Tehtävänanto
 
@@ -1600,79 +1854,7 @@ if(tuplakirjain) {
 
 <br>
 
-## Tehtävä 12 | Pyramiidin teko
-
-### Tehtävänanto
-
-- Tee konsoliin pyramiidi `*` merkeistä
-- Tehtävässä `saa käyttää vaan yhtä console.log()` lausetta
-- Pyramiidin `koko` määritetään `oliolla`
-  - `Olio` kertoo pyramiidin `pohjan leveyden`
-  - Leveys `pyöristetään alaspäin`, esim `4 leveys olis 3`
-
-<br>
-
-### Esimerkki tuloksia
-
-```js
-> 15
-       *
-      ***
-     *****
-    *******
-   *********
-  ***********
- *************
-***************
-
-> 4
- *
-***
-
-> 6
-  *
- ***
-*****
-```
-
-<details>
-<summary>Vinkki 1</summary>
-
-- Voit käyttää `%` matikka operaattoria laskemaan `jakojäännöksen`
-- Jakojäännöksellä voit helposti tarkistaa onko luku `parinninen` vai ei
-
-```js
-if(120 % 2 == 0) console.log("luku 120 on parinninen");
-if(132 % 3 == 0) console.log("luku 132 on jaollinen 3");
-
-console.log(11 % 5) // "11" menee lukuun "5" kaksi kertaa, ja siitä jää 1 yli
-```
-
-</details>
-
-<details>
-<summary>Vastaus</summary>
-
-```js
-const koko = 15;
-let pyramiidi = "";
-let valit = koko / 2;
-// tarkistaa onko luku jaollinen 2, jos on pyöristää alaspäin
-if(koko % 2 == 0) valit = (koko - 1) / 2;
-
-
-for(let i = 1; i <= koko; i += 2) {
-  pyramiidi += " ".repeat(valit--) + "*".repeat(i) + "\n";
-} if(koko > 0) console.log(pyramiidi);
-```
-
-</details>
-
----
-
-<br>
-
-## Tehtävä 13 | Palindromin tunnistus
+## Tehtävä 5.2 | Palindromin tunnistus
 
 ### Tehtävänanto
 
@@ -1732,7 +1914,7 @@ if(teksti.toLowerCase() == takaperin.toLowerCase()) {
 
 <br>
 
-## Tehtävä 14 | Isot alkukirjaimet
+## Tehtävä 5.3 | Isot alkukirjaimet
 
 ### Tehtävänanto
 
