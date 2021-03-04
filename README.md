@@ -23,11 +23,13 @@
     - [Tehtävä 4.5 | Alleviivaus väleillä](#tehtävä-45--alleviivaus-väleillä)
     - [Tehtävä 4.6 | Kertoma laskuri](#tehtävä-46--kertoma-laskuri)
     - [Tehtävä 4.7 | Tekstistä etsimistä](#tehtävä-47--tekstistä-etsimistä)
-    - [Tehtävä 4.8 | Pyramiidin teko](#tehtävä-48--pyramiidin-teko)
+    - [Tehtävä 4.8 | Pyramidin teko](#tehtävä-48--pyramidin-teko)
+    - [Tehtävä 4.9 | Onton pyramidin teko](#tehtävä-49--onton-pyramidin-teko)
   - [Tehtävä 5.0 | Opetus materiaalia .indexOf(), .toUpperCase(), .toLowerCase() ja pyöristys operaattoreista](#tehtävä-50--opetus-materiaalia-indexOf-toUpperCase-toLowerCase-ja-pyöristys-operaattoreista)
     - [Tehtävä 5.1 | Tuplakirjainten löytäminen](#tehtävä-51--tuplakirjainten-löytäminen)
     - [Tehtävä 5.2 | Palindromin tunnistus](#tehtävä-52--palindromin-tunnistus)
     - [Tehtävä 5.3 | Isot alkukirjaimet](#tehtävä-53--isot-alkukirjaimet)
+  - [Tehtävä 6.0 | Taulut, objectit ja random numerot](#tehtävä-60--taulut-objectit-ja-random-numerot)
 
 <br>
 
@@ -1649,7 +1651,7 @@ console.log(`tekstistä "${teksti}" löytyi ${montaLoytynyt} kertaa teksti "${et
 
 <br>
 
-## Tehtävä 4.8 | Pyramiidin teko
+## Tehtävä 4.8 | Pyramidin teko
 
 ### Tehtävänanto
 
@@ -1721,7 +1723,99 @@ for(let i = 1; i <= koko; i += 2) {
 
 <br>
 
+## Tehtävä 4.9 | Onton pyramidin teko
+
+### Tehtävänanto
+
+- Tee konsoliin pyramiidi `*` merkeistä
+- Tehtävässä `saa käyttää vaan yhtä console.log()` lausetta
+- Pyramiidin `koko` määritetään `oliolla`
+  - `Olio` kertoo pyramiidin `pohjan leveyden`
+  - Leveys `pyöristetään alaspäin`, esim `4 leveys olis 3`
+- Pyramiidi tulee olla `ontto sisältä`
+
+<br>
+
+### 4 Esimerkki tulosta
+
+```js
+> 15
+       *
+      * *
+     *   *
+    *     *
+   *       *
+  *         *
+ *           *
+***************
+
+> 4
+ *
+***
+
+> 6
+  *
+ * *
+*****
+
+> 11
+     *
+    * *
+   *   *
+  *     *
+ *       *
+***********
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const leveys = 10;
+let pyramiidi = "";
+let valit = leveys / 2;
+if(leveys % 2 == 0) valit = (leveys - 1) / 2;
+
+for(let i = 1; i <= leveys; i += 2) {
+  if(i > 2 && i + 1 < leveys) {
+    pyramiidi += " ".repeat(valit--) + "*" + " ".repeat(i - 2) + "*" + "\n";
+  } else pyramiidi += " ".repeat(valit--) + "*".repeat(i) + "\n";
+} if(leveys > 0) console.log(pyramiidi);
+```
+
+</details>
+
+---
+
+<br>
+
 ## Tehtävä 5.0 | Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
+
+### Selitykset
+
+- `.indexOf()` palauttaa numero `indexin` josta tietty `merkkijono löytyi` ekana `vasemmalta oikealle`
+  - Jos merkkijonoa `ei löydy` palauttaa se `-1`
+- `.toUpperCase()` muuttaa tekstissä jokaisen kirjaimen `isoksi` kirjaimeksi
+- `.toLowerCase()` muuttaa tekstissä jokaisen kirjaimen `pieneksi` kirjaimeksi
+- `break` lopettaa `for` tai `while` loopin
+  - `break` käytetään esim, jos halutaan loopata kunnes tietty asia tapahtuu, jolloin loop voidan lopettaa
+- `continue` lopettaa kyseisen `kierroksen loopissa`
+  - Jos laitat heti loopin koodin alkuun `continue`, se ei suorita `loppuja koodeja`
+  - `continue` laittaa loopin seuraavalle loopille, ja `for` loopissa suorittaa `3 vaiheen`
+- `Math.ceil()` pyötistää desimaaliluvut `ylös` päin
+  - `Math.ceil(0.9)`, tulisi pyöristymään `1`
+  - `Math.ceil(0.0001)`, tulisi pyöristymään `1`
+  - `Math.ceil(0)`, pyöristyy `0`
+- `Math.floor()` pyöristää `alaspäin`
+  - `Math.floor(0.999)` pyöristyy `0`
+  - `Math.floor(0.2)` pyöristyy `0`
+  - `Math.floor(1.2)` pyöristyy `1`
+- `Math.round()` pyöristää luvun `oikeaoppisesti`, eli `alle .5 alas`, ja` .5 tai enemmän ylös`
+  - `Math.round(5.5)` pyöristyy `6`
+  - `Math.round(5.49999)` pyöristyy `5`
+  - `Math.round(5.8)` pyöristyy `6`
+
+### Opetus materiaali
 
 ```js
 // Etsii tekstistä tietyn kirjain arvon, ja palauttaa sen index numeron
@@ -1758,6 +1852,37 @@ console.log(Math.ceil(8.9), Math.ceil(3.1)); // Pyöristää ylöspäin
 console.log(Math.floor(8.9), Math.floor(3.1)); // Pyöristää alaspäin
 console.log(Math.round(8.9), Math.round(3.1), Math.round(7.5)); // Pyöristää normaalisti
 ```
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+6
+11
+-1
+KAIKKI ON ISOLLA
+kaikki on pienellä
+Aloittaa 0
+Aloittaa 1
+	Lopettaa 1
+Aloittaa 2
+Aloittaa 3
+	Lopettaa 3
+Aloittaa 4
+Aloittaa 5
+	Lopettaa 5
+Aloittaa 6
+Aloittaa 7
+while loop on toinen loop, joka ei vaadi kun vaan yhden ehdon 10
+while loop on toinen loop, joka ei vaadi kun vaan yhden ehdon 15
+while loop on toinen loop, joka ei vaadi kun vaan yhden ehdon 20
+while loop on toinen loop, joka ei vaadi kun vaan yhden ehdon 25
+9 4
+8 3
+9 3 8
+```
+
 
 ---
 
@@ -1954,3 +2079,118 @@ console.log(uusiTeksti);
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 6.0 | `Taulut`, `objectit` ja `random` numerot
+
+### Selitykset
+
+- `Taulut` ovat koodaamisessa hyvin `tärkeä` tapa `säilöä` ja `käyttää dataa`
+  - On `pari` eri tapaa `tehdä tauluja`, mutta nytten käydään `objectit` ja `index taulut`
+  - `index taulu` tehdään `[]` `kulmasulkeilla` ja siitä voi nimensä mukaan `hakea dataa` `index numerolla`
+    - `Numerot alkaa 0`, ja voit `.length` komennolla, nähdä miten paljon `dataa taulussa on`
+      - Voit `hakea dataa` näin `taulu[0]` nytten tuo palauttaisi `0` indexin `tiedot`
+      - Jos `haet` dataa numerolla `jota ei ole`, palauttaa se `undefined`
+      - Voit `muuttaa dataa` laittamalla `taulu[0] = "uusi arvo"` jolloin `edellinen arvo` muuttuu `uudeksi`
+        - Vaikka `indexissä` ei olisi ollut tietoa, siihen tulee `uusi tieto`
+        - Voit laittaa tietoa `indexiin`, joka on paljon pidemmällä kun taulu on
+  - `Objecti` on taulu, josta haetaan `avain` sanalla eikä `index numerolla`
+  - Voit laittaa `avain` sanaksi toki `index numeron`, jos haluat
+  - `Objectin` voit luoda `{}` `aalkosulkeilla`
+    - Sulkeitten sisälle tulee ensin `avain sana`, sitten `:` ja `arvo`
+    - Jos haet `avaimella jota ei ole`, palauttaa se `undefined`
+  - `Tauluihin` ja `objecteihin` voi tallentaa `mitä arvoja vaan`
+- `.split("")` muuttaa `tekstin` `tauluksi`
+  - Jos et määritä `merkkiä` `splitin` sisälle, se ajaa `jokaisen` merkin tekstissä `omaksi taulun indexiksi`
+  - Jos määrität `merkin`, se jakaa kyseisen merken kohdalla tiedon kahteen `taulun soluun`
+    - Esim `"eeeteetetee".split("t")` tulisi `["eee", "ee", "e", "ee"]`, huomaa että `"t"` kirjaimet on `poistettu`
+- `.join("")` liittää taulun `yhteen tekstiksi`
+  - Jos laitat `merkin` `join("")` lauseen `sisälle`, se liittää taulun `datan yhteen sillä merkillä`
+  - Muuten kaikki `data` menee vaan `yhteen normaalisti`
+- Voit yhdistää `.split("")` ja `.join("")` lauseen ja `korvata` tiettyjä kirjaimia
+  - Esim `"etana".split("a").join("r")`, muutta jokaisen `"a"` kirjaimen `"r"` kirjaimeksi
+- `Math.random()` palauttaa numeron joka on `0 - 0.999999...` välillä
+
+### Opetus materiaali
+
+```js
+const isotaulu = {
+  "nimiA": 5,
+  "nimiB": "arvo", // Arvona voi olla mikä vaan, vaikka numero, taulu, objecti tai teksti
+  "nimiC": {
+    "nimiA": 100
+  }
+}
+
+console.log(isotaulu); // Tulostaa koko objectin
+console.log(isotaulu.nimiA); // Hakee objectista nimiA avain sanan
+console.log(isotaulu["nimiB"]); // Voit myös käyttää kulma sulkeita
+console.log(isotaulu.nimiC);
+console.log(isotaulu.tuntematon) // Tätä nimeä ei löydy, joten palauttaa "undefined"
+console.log(isotaulu.nimiC.nimiA)
+
+const indexTaulu = [ // Voit tehdä index taulun, josta haetaan vaan index numerolla
+  "abcd", 14234, "5/5 arvo",
+  { "nimiA": "arvo" },
+  [ 10, 20, 30 ]
+];
+
+console.log(indexTaulu[0]);
+console.log(indexTaulu[2]);
+console.log(indexTaulu[3]);
+  console.log(indexTaulu[3].nimiA);
+console.log(indexTaulu[4]);
+  console.log(indexTaulu[4][1]);
+console.log(indexTaulu[75]);
+
+console.log(indexTaulu.indexOf(14234)) // Voit käyttää index of, myös index tauluihin
+
+indexTaulu.push("uusi data"); // Voit lisätä push komennolla uutta dataa tauluun
+console.log(indexTaulu[5]);
+
+indexTaulu[1] = "muutettu data"; // Voit myös muuttaa taulun dataa näin
+console.log(indexTaulu[1])
+
+console.log("tämä on teksti".split("")) // Voit myös muuttaa "split" komennolla tekstistä taulun
+console.log("aaaiaaaiaiaaa".split("i")) // Nytten se jakaa sen tauluihin aina "i" kohdalla
+
+console.log(["a", "b", "c"].join("")) // Voit myös yhdistää taulun tekstiksi
+console.log("kello".split("ll").join("45")) // Voit myös korvata näin tiettyjä kirjaimia
+
+console.log(Math.floor(Math.random() * 10)) // Antaa random numeron 0 - 9 välillä
+console.log(Math.ceil(Math.random() * 30)) // Antaa random numeron 1 - 30 välillä
+console.log(Math.round(Math.random() * 40)) // Antaa random numeron 0 - 40 välillä
+```
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+► {nimiA: 5, nimiB: "arvo", nimiC: {…}}
+5
+arvo
+► {nimiA: 100}
+undefined
+100
+abcd
+5/5 arvo
+► {nimiA: "arvo"}
+arvo
+► (3) [10, 20, 30]
+20
+undefined
+1
+uusi data
+muutettu data
+► (14) ["t", "ä", "m", "ä", " ", "o", "n", " ", "t", "e", "k", "s", "t", "i"]
+► (4) ["aaa", "aaa", "a", "aaa"]
+abc
+ke45o
+2
+9
+30
+```
