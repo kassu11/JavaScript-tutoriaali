@@ -882,7 +882,7 @@ if(numero == 0) {
   - Jos salasanassa on `alle 9 merkkiä`, se on `keskiverto`
   - Jos salasana on `alle 20 merkkiä` se on `pitkä`
   - Jos salasana on `yli 20 merkkiä` se on `liian pitkä`
-  - Mikäli käyttäjä `ei laita salasana`a sanotaan siitä konsooliin
+  - Mikäli käyttäjä `ei laita salasanaa` sanotaan siitä konsooliin
 - Salasanan `turvallisuus kerrotaan konsooliin`, ja `salansana näkyy` siinä `salattuna`
 
 <br>
@@ -1006,10 +1006,10 @@ if(numero % 3 == 0 && numero % 4 == 0 && numero % 7 == 0) {
     else jaolliset = `"7"`;
   }
 
-  if(jaolliset.length > 1) {
+  if(jaolliset.length > 3) {
     console.log(`"${numero}" on jaollinen numeroilla ${jaolliset}`);
   } else if(jaolliset.length > 0) {
-    console.log(`"${numero}" on jaollinen ${jaolliset}!`);
+    console.log(`"${numero}" on jaollinen numerolla ${jaolliset}`);
   } else {
     console.log(`"${numero}" ei olle jaollinen "3", "4" tai "7"`);
   } 
