@@ -949,9 +949,9 @@ if(salasana.length == 0) {
 
 "28" on jaollinen numeroilla "4" ja "7"
 
-"14" on jaollinen numeroilla "7"
+"14" on jaollinen numerolla "7"
 
-"8" on jaollinen numeroilla "4"
+"8" on jaollinen numerolla "4"
 
 "abc" ei olle jaollinen "3", "4" tai "7"
 ```
