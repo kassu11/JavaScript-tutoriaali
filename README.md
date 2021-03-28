@@ -1,5 +1,14 @@
 # Sisällysluettelo
 
+- [Ennen tehtävien aloittamista](#ennen-tehtävien-aloittamista)
+  - [1. Tekstieditorin lataaminen](#1-tekstieditorin-lataaminen)
+  - [2. Tiedosto polku](#2-tiedosto-polku)
+  - [3. Visual Studio Coden käyttö](#3-visual-studio-coden-käyttö)
+  - [4. Tehtävien teko](#4-tehtävien-teko)
+  - [5. Tiedostojen teko tehtävä kansioihin](#5-tiedostojen-teko-tehtävä-kansioihin)
+  - [6. HTML tiedoston teko](#6-html-tiedoston-teko)
+  - [7. Tehtävien avaus](#7-tehtävien-avaus)
+  - [8. Teemat ja muut turhakkeet](#8-teemat-ja-muut-turhakkeet)
 - [JavaScript opettelu tehtäviä](#javascript-opettelu-tehtäviä)
   - [Tehtävä 1.0 | Oliot ja konsoliin kirjoittaminen](#tehtävä-10--oliot-ja-konsoliin-kirjoittaminen)
     - [Tehtävä 1.1 | Hei maailma](#tehtävä-11--hei-maailma)
@@ -30,6 +39,159 @@
     - [Tehtävä 5.2 | Palindromin tunnistus](#tehtävä-52--palindromin-tunnistus)
     - [Tehtävä 5.3 | Isot alkukirjaimet](#tehtävä-53--isot-alkukirjaimet)
   - [Tehtävä 6.0 | Taulut, objectit ja random numerot](#tehtävä-60--taulut-objectit-ja-random-numerot)
+
+<br>
+
+# Ennen tehtävien aloittamista
+
+- Neuvon tässä miten pääset alkuun ennen tehtävien tekoa
+- Tämän jälkeen sinun pitäisi pystyä aloittamaan tehtävien teko omatoimisesti
+
+### 1. Tekstieditorin lataaminen
+
+- Varmaan tärkein asia koodaamisessa on mitä `editoria käytät`
+- Editori tulee `nopeuttamaan` ja `helpottamaan` koodi syntaksien `kirjoittamista` ja `muistamista`
+- `Ilmainen` ja `hyvä` editori on `visual studio code`
+- Suosittelen lataaman sen `englanniksi`, koska ohjeet ovat `sille kielelle suunniteltu`
+
+<a href="https://code.visualstudio.com/download"><img src="https://i.imgur.com/PBVI9UR.png"></a>
+
+- Kun olet ladannut editorin mene tokaan vaiheeseen
+
+### 2. Tiedosto polku
+
+- Tee ensin joku `kansio` tietokoneellesi, jonne haluat `tallentaa kaikki tehtäväsi`
+  - Suosittelen tekemään kansion nimeltä `Web Devaus`
+  - Laita sen `sisälle` `3` `kansiota`
+    - `Ensimmäinen` kansio on `JavaScript Tehtävät`
+    - `Toinen` kansio on `HTML Tehtävät`
+    - `Viimeinen` kansio on `CSS tehtävät`
+    - <img src="https://i.imgur.com/usKEjik.png">
+
+### 3. Visual Studio Coden käyttö
+
+- Kun avaan editorisi ekan kerran näkymä pitäisi olla vähän saman lainen kun tämä
+- <img src="https://i.imgur.com/aZJxXrW.png" width="500">
+- `Todennäköisesti` näkymäsi on `eri`, koska olen `muokannut asetuksia`, mutta älä huoli siitä
+- Paino vasemmassa yläkulmasta **"File"** nappia
+  - Sitten paina **"Open Folder..."**
+  - Murupolku on `File > Open Folder...`
+  - <img src="https://i.imgur.com/kApzsRJ.gif">
+- Etsi luomasi `Web Devaus kansio` ja `avaa se`
+  - Kun kansio on avattu sinun pitäisi nähdä `3 kansiota` sen sisällä
+  - <img src="https://i.imgur.com/9wzdHnj.png">
+  - Jos et näe niitä, paina vasemmalta **"Explorer"** nappia
+    - Merkattu puneisella kuvassa
+  - Kansiosi varmaan `näyttää erillaiselta` kun `minulla`, koska `munulla on teema`, mut sillä `ei ole väliä`
+- Kun kansiot väkyvät `vasemmalla` voit mennä `seuraavaan vaiheeseen`
+
+### 4. Tehtävien teko
+
+- Tehtävät tehdään niitten omiin kansioihin
+  - Esim. `javascript` tehtävät tehdään `javascript kansioon` jne
+- `Kansion` sisälle tehtään `oma kansio` jossa lukee `tehtävä numero`
+  - Esim. tässä on ensimmäinen js tehtävä tehty oikeaan kansioon
+  - <img src="https://i.imgur.com/iM1NStx.png">
+  - `Visual Studio Code` `tiivistää kansiot yhteen`, jos niitä on `vain yksi`
+    - Mutta kun teet `kansioita enemmän` ne näyttää normaalilta
+    - <img src="https://i.imgur.com/DtueJHh.png">
+  - Voit luoda `kansioita` ja `tiedostoja` myös `Visual Studiossa`
+  - <img src="https://i.imgur.com/6Prl5xb.png">
+  - `Keltainen ympyrä` on `kansion` luonti nappi
+  - `Punainen ympyrä` on `tiedoston` luonti nappi
+
+### 5. Tiedostojen teko tehtävä kansioihin
+
+- `Näytän kaikki tiedostot` joita sinun pitää tehdä `kaikissa 3 tehtävässä`
+  - Et tarvitse käytännössä `kaikkia 3 tiedostoa`, esim js alku tehtävissä
+  - `Tee silti kaikki` tiedostot, jotta se jää mieleen ja sitten et ihmettele miten tiedostot tehdään kun niitä tarvitaan
+- Luo `tiedostot` `js tehtävä kansiossa` olevaan `tehtävä 1.0` kansioon
+- `3 tiedostoa` mitä tarvitset jokaiseen `tehtävään on`
+  - **`index.html`** niminen tiedosto
+  - **`[oma nimi].js`** nimisen tiedoston
+    - Voit nimetä tiedoston `miksi haluat`, kunhan laitat `.js loppuun`
+  - **`[oma nimi].css]`** tiedosto
+    - Laita minki nimen haluat, kunhan `.css on lopussa`
+  - <img src="https://i.imgur.com/K5k7J1E.png">
+- `.js` tiedostoon tulee sivujen koodit
+- `.css` tiedostoon tulee sivujen tyylit
+- `.html` tiedostoon tulee sivujen elementit ja napit
+
+### 6. HTML tiedoston teko
+
+- Sinun pitää laittaa vähän tietoa **"index.html"** tiedostoon ennen kun voit aloittaa tehtävien teon
+- Muut tiedosto jätetään tyhjäksi, ja niitten täyttö neivotaan tehtävissä
+- Avaa `index.html` tiedosto `editorissa`
+  - Kirjoita `editorissa tiedostoon` `!` ja sitten paina `tabulaattoria`
+    - Tämän pitäisi tehdä perus `html DOM` pohja `tiedostoon`
+    - `tabulaattori on nappi näppäimistössä` jossa lukee yleensä `TAB`
+    - Jos et onnistu saamaan dom pohjaa voit kopioida sen tästä mallista
+    - <img src="https://i.imgur.com/EqSqzAG.gif">
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+```
+
+- Lisää **`<head>`** tagin sisälle linkitys `.css tiedostoon`
+  - <img src="https://i.imgur.com/fAAj89P.png" height="200">
+- Lisää `tiedoston loppuun linkkaus` `.js tiedostoon`
+  - <img src="https://i.imgur.com/W95QZHD.png" height="200">
+- Nytten sinun `tehtävä 1.0` kansio on `valmis koodattavaksi`
+- Muista tehdä `nämä 3 tiedostia aina` `jokaiseen tehtävä kansioon`
+- Muista myös tallentaa **"index.html"** tiedosto
+  - Voit painaa **`ctrl`** + **`s`** nappia tallentaaksesi
+  - Jos `tiedostossa` on tämä `pallo kuva` se `ei ole tallennettu`
+  - <img src="https://i.imgur.com/rrFuv2A.png">
+
+### 7. Tehtävien avaus
+
+- Jotta voisit `helposti` tarkistella `tehtävien tuloksia`, kannattaa `asentaa` `live server` niminen `lisäosa editoriin`
+- Mene vasemmalta **"Extensions"** ikkunaan
+- Hae **"live server"** ja asenna lisäosa
+  - <img src="https://i.imgur.com/DbC0tDs.png">
+- Mene takaisin editorin **"Explorer"**
+- Paina **index.html** tiedostoa `oikealla hiiren napilla`
+- Paina **Open with live server** ja nettisivu pitäisi `avautua selaimeesi`
+  - <img src="https://i.imgur.com/EbMqkyN.png">
+  - Jos `selaimesi ei ole aiki`, tämän `pitäisi avata se`
+- Riippuen selaimestasi, tämä saattaa vähän olla eri, mutta **"firefox"**, **"chrome"**, **"edge"** ja **"brave"** pitäis toimia aika saman lailla
+  - Kun **`live serveri`** on avannut `tyhjän nettisivun` sinulle paina **`ctrl`** + **`shift`** + **`i`**
+    - Tämä `pitäisi` avata **`selaimesi`** Dev työkalut
+      - <img src="https://i.imgur.com/EmXTCBt.png">
+    - Jos et saanut työ kaluja auki, voit painaa joko oikealla nettisivua ja sitten tarkista
+      - <img src="https://i.imgur.com/ulf2D4r.gif">
+    - **`Dev`** työkalujen **"Console"** ikkunasta voit nähdä toimiiku sinun javascript tehtäväsi
+      - Tällä hetkellä **"Console"** ikkunassa ei pitäisi olla `mahdollisen errorin` lisäksi muuta
+    - Jokainen `JavaScipt kurssin` alku tehtävä tarkistetaan **`consolista`** joten tämä on työkalu jota kannattaa opetella käyttämään
+
+### 8. Teemat ja muut turhakkeet
+
+- Olet `nyt valmis aloittamaan tehtävien teon`, mutta jos haluat `muokata editoria` enemmän se on mahdollista
+- En neuvo paljoa miten sitä voi muokata, koska se ei ole tämän opetuksen idea
+  - Tuossa kuitenkin parit teemat joita itse käytän, jos kiinnostaa
+  - Tässä on `editorini` `väri teema` mitä käytän
+    - <img src="https://i.imgur.com/Pygkp25.png">
+  - Tässä on `editorini` `tiedosto teema`
+    - <img src="https://i.imgur.com/ohaQf6E.png">
+- Voit asetuksista laittaa editorisi `tabulaatti kooon`, ja itse käytän `2`, (`4` on alkuarvo)
+  - <img src="https://i.imgur.com/pBmzxNB.png">
+  - Löydät asetukset `vasemmasta` `ala kulmasta`, olevasta `rattaasta`
+    - Sieltä avaa **"Settings"** tai paina **"ctrl"** + **","**
+- En myöskään pärjäin ilman tätä scrolli zoom asetuksa :D
+  - <img src="https://i.imgur.com/CU2wA5k.png">
+- Tehtävien teon iloa
 
 <br>
 
