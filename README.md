@@ -39,7 +39,8 @@
     - [Tehtävä 5.2 | Palindromin tunnistus](#tehtävä-52--palindromin-tunnistus)
     - [Tehtävä 5.3 | Isot alkukirjaimet](#tehtävä-53--isot-alkukirjaimet)
   - [Tehtävä 6.0 | Taulut, objectit ja random numerot](#tehtävä-60--taulut-objectit-ja-random-numerot)
-    - [Tehtävä 6.1 | Rajoitettu satunnaisuus](#)
+    - [Tehtävä 6.1 | Rajoitettu satunnaisuus](#tehtävä-61--rajoitettu-satunnaisuus)
+    - [Tehtävä 6.2 | Salasanan luonti](#tehtävä-62--salasanan-luonti)
 
 <br>
 
@@ -2307,9 +2308,9 @@ Satunnainen numero 0-2 väliltä: 1
 
 ```js
 
-	Luku on (-1 tai 1): -1
-	Luku on (1-6): 5
-	Luku on (10-15): 14
+  Luku on (-1 tai 1): -1
+  Luku on (1-6): 5
+  Luku on (10-15): 14
 
 ```
 
@@ -2324,9 +2325,9 @@ const luku2 = Math.ceil(Math.random() * 6);
 const luku3 = Math.round(Math.random() * (15 - 10) + 10);
 
 console.log(`
-	Luku on (-1 tai 1): ${luku1}
-	Luku on (1-6): ${luku2}
-	Luku on (10-15): ${luku3}
+  Luku on (-1 tai 1): ${luku1}
+  Luku on (1-6): ${luku2}
+  Luku on (10-15): ${luku3}
 `);
 ```
 
@@ -2369,31 +2370,31 @@ Luotu salasana: 5oö3CKöåaqcpz3mxqtIiMi18PEU
 let salasana = "";
 
 while(true) {
-	const merkit = "abcdefghijklmnopqrstuvwxyzåäö";
-	const numerot = "0123456789";
-	const pituus = Math.round(Math.random() * (35 - 8)) + 8;
+  const merkit = "abcdefghijklmnopqrstuvwxyzåäö";
+  const numerot = "0123456789";
+  const pituus = Math.round(Math.random() * (35 - 8)) + 8;
 
-	let sisältääNumeron = false;
-	let sisältääIson = false;
-	let sisältääPienen = false;
+  let sisältääNumeron = false;
+  let sisältääIson = false;
+  let sisältääPienen = false;
 
-	for(let i = 0; i < pituus; i++) {
-		const numero = Math.random() < .2;
-		const isoKirjain = Math.random() < .5;
-		
-		if(numero) {
-			salasana += numerot[Math.floor(Math.random() * numerot.length)];
-			sisältääNumeron = true;
-		} else if(isoKirjain) {
-			salasana += merkit[Math.floor(Math.random() * merkit.length)].toUpperCase();
-			sisältääIson = true;
-		} else {
-			salasana += merkit[Math.floor(Math.random() * merkit.length)];
-			sisältääPienen = true;
-		}
-	}
+  for(let i = 0; i < pituus; i++) {
+    const numero = Math.random() < .2;
+    const isoKirjain = Math.random() < .5;
+    
+    if(numero) {
+      salasana += numerot[Math.floor(Math.random() * numerot.length)];
+      sisältääNumeron = true;
+    } else if(isoKirjain) {
+      salasana += merkit[Math.floor(Math.random() * merkit.length)].toUpperCase();
+      sisältääIson = true;
+    } else {
+      salasana += merkit[Math.floor(Math.random() * merkit.length)];
+      sisältääPienen = true;
+    }
+  }
 
-	if(sisältääNumeron && sisältääIson && sisältääPienen) break;
+  if(sisältääNumeron && sisältääIson && sisältääPienen) break;
 }
 
 console.log("Luotu salasana:", salasana);
