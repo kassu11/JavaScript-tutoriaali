@@ -34,11 +34,12 @@
     - [Tehtävä 4.7 | Tekstistä etsimistä](#tehtävä-47--tekstistä-etsimistä)
     - [Tehtävä 4.8 | Pyramidin teko](#tehtävä-48--pyramidin-teko)
     - [Tehtävä 4.9 | Onton pyramidin teko](#tehtävä-49--onton-pyramidin-teko)
-  - [Tehtävä 5.0 | Opetus materiaalia .indexOf(), .toUpperCase(), .toLowerCase() ja pyöristys operaattoreista](#tehtävä-50--opetus-materiaalia-indexOf-toUpperCase-toLowerCase-ja-pyöristys-operaattoreista)
+  - [Tehtävä 5.0 | Opetus materiaalia .indexOf(), .toUpperCase(), .toLowerCase() ja pyöristys operaattoreista](#tehtävä-50--opetus-materiaalia-indexof-kirjainkoon-muutosta-ja-loopin-rikkomisesta)
     - [Tehtävä 5.1 | Tuplakirjainten löytäminen](#tehtävä-51--tuplakirjainten-löytäminen)
     - [Tehtävä 5.2 | Palindromin tunnistus](#tehtävä-52--palindromin-tunnistus)
     - [Tehtävä 5.3 | Isot alkukirjaimet](#tehtävä-53--isot-alkukirjaimet)
   - [Tehtävä 6.0 | Taulut, objectit ja random numerot](#tehtävä-60--taulut-objectit-ja-random-numerot)
+    - [Tehtävä 6.1 | Rajoitettu satunnaisuus](#)
 
 <br>
 
@@ -2285,3 +2286,117 @@ Satunnainen numero 1-2 väliltä: 2
 Satunnainen numero 0-1 väliltä: 1
 Satunnainen numero 0-2 väliltä: 1
 ```
+
+---
+
+<br>
+
+## Tehtävä 6.1 | Rajoitettu satunnaisuus
+
+### Tehtävänanto
+
+- Tulosta konsoliin `3 satunnaisesti valittua numeroa`
+  - `Ensimmäinen` numero pitää olla joko `-1` tai `1`
+  - `Toinen` numero on oltava `yhden` ja `kuuden` väliltä
+  - `Viimeinen` numero on oltava `vähintään 10` ja `enintään 15`
+- Numerot `eivät saa olla desimaali muodossa`, niitten pitää olla `kokonaislukuja`
+
+<br>
+
+### Esimerkki tulos
+
+```js
+
+	Luku on (-1 tai 1): -1
+	Luku on (1-6): 5
+	Luku on (10-15): 14
+
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+let luku1 = Math.floor(Math.random() * 3) - 1;
+while(luku1 == 0) luku1 = Math.floor(Math.random() * 3) - 1;
+
+const luku2 = Math.ceil(Math.random() * 6);
+const luku3 = Math.round(Math.random() * (15 - 10) + 10);
+
+console.log(`
+	Luku on (-1 tai 1): ${luku1}
+	Luku on (1-6): ${luku2}
+	Luku on (10-15): ${luku3}
+`);
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 6.2 | Salasanan luonti
+
+### Tehtävänanto
+
+- Luo käyttäjälle `satunnainen salasana`
+  - `Salasanan pituus` on myös `valittu satunnaisesti`
+   - Sen pitää olla `vähintään 8` ja `enintään 35 merkkiä pitkä`
+  - Salasanan `pitää sisältää ainakin yksi numero`
+  - Salasanan `pitää sisältää vähintään yksi iso` ja `pieni kirjain`
+- Tulosta luotu salasana `konsoliin`
+
+<br>
+
+### Esimerkki tuloksia
+
+```js
+Luotu salasana: FdVIö1fv11aU
+
+Luotu salasana: of8vxPoeObNÅpog5RUvRd0uMsJu2fÅCEå7V
+
+Luotu salasana: Hmb00ÄdfF3
+
+Luotu salasana: 5oö3CKöåaqcpz3mxqtIiMi18PEU
+
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+let salasana = "";
+
+while(true) {
+	const merkit = "abcdefghijklmnopqrstuvwxyzåäö";
+	const numerot = "0123456789";
+	const pituus = Math.round(Math.random() * (35 - 8)) + 8;
+
+	let sisältääNumeron = false;
+	let sisältääIson = false;
+	let sisältääPienen = false;
+
+	for(let i = 0; i < pituus; i++) {
+		const numero = Math.random() < .2;
+		const isoKirjain = Math.random() < .5;
+		
+		if(numero) {
+			salasana += numerot[Math.floor(Math.random() * numerot.length)];
+			sisältääNumeron = true;
+		} else if(isoKirjain) {
+			salasana += merkit[Math.floor(Math.random() * merkit.length)].toUpperCase();
+			sisältääIson = true;
+		} else {
+			salasana += merkit[Math.floor(Math.random() * merkit.length)];
+			sisältääPienen = true;
+		}
+	}
+
+	if(sisältääNumeron && sisältääIson && sisältääPienen) break;
+}
+
+console.log("Luotu salasana:", salasana);
+```
+
+</details>
