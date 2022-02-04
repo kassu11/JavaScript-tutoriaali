@@ -73,7 +73,7 @@
 - Kun avaan editorisi ekan kerran näkymä pitäisi olla vähän saman lainen kun tämä
 - <img src="https://i.imgur.com/aZJxXrW.png" width="500">
 - `Todennäköisesti` näkymäsi on `eri`, koska olen `muokannut asetuksia`, mutta älä huoli siitä
-- Paino vasemmassa yläkulmasta **"File"** nappia
+- Paina vasemmassa yläkulmasta **"File"** nappia
   - Sitten paina **"Open Folder..."**
   - Murupolku on `File > Open Folder...`
   - <img src="https://i.imgur.com/kApzsRJ.gif">
@@ -82,7 +82,7 @@
   - <img src="https://i.imgur.com/9wzdHnj.png">
   - Jos et näe niitä, paina vasemmalta **"Explorer"** nappia
     - Merkattu puneisella kuvassa
-  - Kansiosi varmaan `näyttää erillaiselta` kun `minulla`, koska `munulla on teema`, mut sillä `ei ole väliä`
+  - Kansiosi varmaan `näyttää erillaiselta` kun `minulla`, koska `käytän teema`, mut sillä `ei ole väliä`
 - Kun kansiot väkyvät `vasemmalla` voit mennä `seuraavaan vaiheeseen`
 
 ### 4. Tehtävien teko
@@ -165,7 +165,7 @@
 - Paina **index.html** tiedostoa `oikealla hiiren napilla`
 - Paina **Open with live server** ja nettisivu pitäisi `avautua selaimeesi`
   - <img src="https://i.imgur.com/EbMqkyN.png">
-  - Jos `selaimesi ei ole aiki`, tämän `pitäisi avata se`
+  - Jos `selaimesi ei ole auki`, tämän `pitäisi avata se`
 - Riippuen selaimestasi, tämä saattaa vähän olla eri, mutta **"firefox"**, **"chrome"**, **"edge"** ja **"brave"** pitäis toimia aika saman lailla
   - Kun **`live serveri`** on avannut `tyhjän nettisivun` sinulle paina **`ctrl`** + **`shift`** + **`i`**
     - Tämä `pitäisi` avata **`selaimesi`** Dev työkalut
@@ -215,7 +215,7 @@
 
 <br>
 
-## Tehtävä 1.0 | `Oliot` ja `konsoliin kirjoittaminen`
+## Tehtävä 1.0 | Oliot ja konsoliin kirjoittaminen
 
 ### Opetus materiaali
 
@@ -228,7 +228,7 @@
 
 /*
   Voin myös kommentoida
-  paljon asiaa näillä merkeillä
+  monta riviä näillä merkeillä
 */
 
 // Tässä on tapoja luoda olioita
@@ -313,6 +313,8 @@ olen tekstiä
 olen myös tekstiä
 ```
 
+</details>
+
 <details>
 <summary>Vinkki 2</summary>
 
@@ -333,8 +335,6 @@ Odotettu lopputulos
 ```js
 yksi kaksikolme
 ```
-
-</details>
 
 </details>
 
@@ -401,7 +401,7 @@ console.log(muuttuja);
 
 <br>
 
-## Tehtävä 2.0 | `.repeat()`, `.length` ja matikka `operaattorit`
+## Tehtävä 2.0 | .repeat(), .length ja matikka operaattorit
 
 ### Selitykset
 
@@ -513,6 +513,8 @@ eeeee
 hahahahahahahaha
 ```
 
+</details>
+
 <details>
 <summary>Vinkki 2</summary>
 
@@ -527,8 +529,6 @@ Rivi1
 Rivi2
 Rivi3
 ```
-
-</details>
 
 </details>
 
@@ -589,8 +589,7 @@ u
 ```js
 const teksti = "teksti tulee tähän";
 
-console.log(teksti);
-console.log("#".repeat(teksti.length));
+console.log(teksti + "\n" + "#".repeat(teksti.length));
 ```
 
 </details>
@@ -729,7 +728,7 @@ console.log(rivi + tyhjaRivi.repeat(nelionKoko / 2 - 2) + rivi);
 
 <br>
 
-## Tehtävä 3.0 | Tietoa `if`, `>`, `<`, `&&`, `||`, `==` ja `!=` operaattoreista
+## Tehtävä 3.0 | Tietoa if, >, <, &&, ||, == ja != operaattoreista
 
 ### Selitykset
 
@@ -898,6 +897,8 @@ if(luku == 5) {
 }
 ```
 
+</details>
+
 <details>
 <summary>Vinkki 2</summary>
 
@@ -923,6 +924,9 @@ if(luku == 5) {
 }
 ```
 
+
+</details>
+
 <details>
 <summary>Vinkki 3</summary>
 
@@ -935,9 +939,6 @@ else if(luku > 5) console.log("Isompi kun 5");
 
 </details>
 
-</details>
-
-</details>
 
 <details>
 <summary>Vastaus</summary>
@@ -1259,7 +1260,7 @@ if(teksti.length < maxPituus - 2) {
 
 <br>
 
-## Tehtävä 4.0 | Materiaalia `for` loopista, `+=` ja `-=` operaattoreista
+## Tehtävä 4.0 | Materiaalia for loopista, += ja -= operaattoreista
 
 ### Selitykset
 
@@ -1951,7 +1952,7 @@ for(let i = 1; i <= leveys; i += 2) {
 
 <br>
 
-## Tehtävä 5.0 | Opetus materiaalia `.indexOf()`, `.toUpperCase()`, `.toLowerCase()` ja `pyöristys` operaattoreista
+## Tehtävä 5.0 | Opetus materiaalia .indexOf(), kirjainkoon muutosta ja loopin rikkomisesta
 
 ### Selitykset
 
@@ -1964,18 +1965,6 @@ for(let i = 1; i <= leveys; i += 2) {
 - `continue` lopettaa kyseisen `kierroksen loopissa`
   - Jos laitat heti loopin koodin alkuun `continue`, se ei suorita `loppuja koodeja`
   - `continue` laittaa loopin seuraavalle loopille, ja `for` loopissa suorittaa `3 vaiheen`
-- `Math.ceil()` pyötistää desimaaliluvut `ylös` päin
-  - `Math.ceil(0.9)`, tulisi pyöristymään `1`
-  - `Math.ceil(0.0001)`, tulisi pyöristymään `1`
-  - `Math.ceil(0)`, pyöristyy `0`
-- `Math.floor()` pyöristää `alaspäin`
-  - `Math.floor(0.999)` pyöristyy `0`
-  - `Math.floor(0.2)` pyöristyy `0`
-  - `Math.floor(1.2)` pyöristyy `1`
-- `Math.round()` pyöristää luvun `oikeaoppisesti`, eli `alle .5 alas`, ja` .5 tai enemmän ylös`
-  - `Math.round(5.5)` pyöristyy `6`
-  - `Math.round(5.49999)` pyöristyy `5`
-  - `Math.round(5.8)` pyöristyy `6`
 
 ### Opetus materiaali
 
@@ -2010,9 +1999,6 @@ while(2 < 100) {
   if(luku > 20) break;
 }
 
-console.log(Math.ceil(8.9), Math.ceil(3.1)); // Pyöristää ylöspäin
-console.log(Math.floor(8.9), Math.floor(3.1)); // Pyöristää alaspäin
-console.log(Math.round(8.9), Math.round(3.1), Math.round(7.5)); // Pyöristää normaalisti
 ```
 
 <br>
@@ -2097,6 +2083,8 @@ if(nimi.indexOf("ö") == -1) {
 }
 ```
 
+</details>
+
 <details>
 <summary>Vinkki 2</summary>
 
@@ -2108,8 +2096,6 @@ for(let i = 0; i < 100; i++) {
   if(i > 10) break; // Lopettaa loopin, jos "i" menee yli 10
 }
 ```
-
-</details>
 
 </details>
 
@@ -2246,85 +2232,39 @@ console.log(uusiTeksti);
 
 <br>
 
-## Tehtävä 6.0 | `Taulut`, `objectit` ja `random` numerot
+## Tehtävä 6.0 | Pyöristys ja random numerot
 
 ### Selitykset
 
-- `Taulut` ovat koodaamisessa hyvin `tärkeä` tapa `säilöä` ja `käyttää dataa`
-  - On `pari` eri tapaa `tehdä tauluja`, mutta nytten käydään `objectit` ja `index taulut`
-  - `index taulu` tehdään `[]` `kulmasulkeilla` ja siitä voi nimensä mukaan `hakea dataa` `index numerolla`
-    - `Numerot alkaa 0`, ja voit `.length` komennolla, nähdä miten paljon `dataa taulussa on`
-      - Voit `hakea dataa` näin `taulu[0]` nytten tuo palauttaisi `0` indexin `tiedot`
-      - Jos `haet` dataa numerolla `jota ei ole`, palauttaa se `undefined`
-      - Voit `muuttaa dataa` laittamalla `taulu[0] = "uusi arvo"` jolloin `edellinen arvo` muuttuu `uudeksi`
-        - Vaikka `indexissä` ei olisi ollut tietoa, siihen tulee `uusi tieto`
-        - Voit laittaa tietoa `indexiin`, joka on paljon pidemmällä kun taulu on
-  - `Objecti` on taulu, josta haetaan `avain` sanalla eikä `index numerolla`
-  - Voit laittaa `avain` sanaksi toki `index numeron`, jos haluat
-  - `Objectin` voit luoda `{}` `aalkosulkeilla`
-    - Sulkeitten sisälle tulee ensin `avain sana`, sitten `:` ja `arvo`
-    - Jos haet `avaimella jota ei ole`, palauttaa se `undefined`
-  - `Tauluihin` ja `objecteihin` voi tallentaa `mitä arvoja vaan`
-- `.split("")` muuttaa `tekstin` `tauluksi`
-  - Jos et määritä `merkkiä` `splitin` sisälle, se ajaa `jokaisen` merkin tekstissä `omaksi taulun indexiksi`
-  - Jos määrität `merkin`, se jakaa kyseisen merken kohdalla tiedon kahteen `taulun soluun`
-    - Esim `"eeeteetetee".split("t")` tulisi `["eee", "ee", "e", "ee"]`, huomaa että `"t"` kirjaimet on `poistettu`
-- `.join("")` liittää taulun `yhteen tekstiksi`
-  - Jos laitat `merkin` `join("")` lauseen `sisälle`, se liittää taulun `datan yhteen sillä merkillä`
-  - Muuten kaikki `data` menee vaan `yhteen normaalisti`
-- Voit yhdistää `.split("")` ja `.join("")` lauseen ja `korvata` tiettyjä kirjaimia
-  - Esim `"etana".split("a").join("r")`, muutta jokaisen `"a"` kirjaimen `"r"` kirjaimeksi
-- `Math.random()` palauttaa numeron joka on `0 - 0.999999...` välillä
+- `Math.random()` palauttaa numeron joka on `0 - 1` välillä
+- `Math.ceil()` ottaa sisäänsä `numeron` ja `pyöristää` sen `ylöspäin ▲` seuraavaan `koko numeroon`
+  - `Math.ceil(5)` palauttaa `5`
+  - `Math.ceil(4.0001)` palauttaa `5`
+  - `Math.ceil(4.99)` palauttaa `5`
+- `Math.floor()` ottaa sisäänsä `numeron` ja `pyöristää` sen `alaspäin ▼` seuraavaan `koko numeroon`
+  - `Math.floor(8)` palauttaa `8`
+  - `Math.floor(8.0001)` palauttaa `8`
+  - `Math.floor(8.99)` palauttaa `8`
+- `Math.round()` ottaa sisäänsä `numeron` ja `pyöristää` sen `lähimpään koko numeroon`
+  - `Math.round(5.5)` palauttaa `6`
+  - `Math.round(5.499999)` palauttaa `5`
+
 
 ### Opetus materiaali
 
 ```js
-const isotaulu = {
-  "nimiA": 5,
-  "nimiB": "arvo", // Arvona voi olla mikä vaan, vaikka numero, taulu, objecti tai teksti
-  "nimiC": {
-    "nimiA": 100
-  }
-}
+console.log("Satunnainen numero 0 ja 1 välillä:", Math.random());
+console.log("Satunnainen numero 0 ja 1 välillä:", Math.random());
+console.log("Satunnainen numero 0 ja 1 välillä:", Math.random());
 
-console.log(isotaulu); // Tulostaa koko objectin
-console.log(isotaulu.nimiA); // Hakee objectista nimiA avain sanan
-console.log(isotaulu["nimiB"]); // Voit myös käyttää kulma sulkeita
-console.log(isotaulu.nimiC);
-console.log(isotaulu.tuntematon) // Tätä nimeä ei löydy, joten palauttaa "undefined"
-console.log(isotaulu.nimiC.nimiA)
+console.log("Pyöristää ylöspäin:", Math.ceil(8.9), Math.ceil(3.1));
+console.log("Pyöristää alaspäin:", Math.floor(8.9), Math.floor(3.1)); 
+console.log("Pyöristää lähimpään:", Math.round(8.9), Math.round(3.1), Math.round(7.5));
 
-const indexTaulu = [ // Voit tehdä index taulun, josta haetaan vaan index numerolla
-  "abcd", 14234, "5/5 arvo",
-  { "nimiA": "arvo" },
-  [ 10, 20, 30 ]
-];
-
-console.log(indexTaulu[0]);
-console.log(indexTaulu[2]);
-console.log(indexTaulu[3]);
-  console.log(indexTaulu[3].nimiA);
-console.log(indexTaulu[4]);
-  console.log(indexTaulu[4][1]);
-console.log(indexTaulu[75]);
-
-console.log(indexTaulu.indexOf(14234)) // Voit käyttää index of, myös index tauluihin
-
-indexTaulu.push("uusi data"); // Voit lisätä push komennolla uutta dataa tauluun
-console.log(indexTaulu[5]);
-
-indexTaulu[1] = "muutettu data"; // Voit myös muuttaa taulun dataa näin
-console.log(indexTaulu[1])
-
-console.log("tämä on teksti".split("")) // Voit myös muuttaa "split" komennolla tekstistä taulun
-console.log("aaaiaaaiaiaaa".split("i")) // Nytten se jakaa sen tauluihin aina "i" kohdalla
-
-console.log(["a", "b", "c"].join("")) // Voit myös yhdistää taulun tekstiksi
-console.log("kello".split("ll").join("45")) // Voit myös korvata näin tiettyjä kirjaimia
-
-console.log(Math.floor(Math.random() * 10)) // Antaa random numeron 0 - 9 välillä
-console.log(Math.ceil(Math.random() * 30)) // Antaa random numeron 1 - 30 välillä
-console.log(Math.round(Math.random() * 40)) // Antaa random numeron 0 - 40 välillä
+console.log("Satunnainen numero 0-10 väliltä:", Math.random() * 10); // Tästä ei voi tulla tasan 0, tai 10 ikinä
+console.log("Satunnainen numero 1-2 väliltä:", Math.ceil( Math.random() * 2) );
+console.log("Satunnainen numero 0-1 väliltä:", Math.floor( Math.random() * 2) );
+console.log("Satunnainen numero 0-2 väliltä:", Math.round( Math.random() * 2) );
 ```
 
 <br>
@@ -2332,27 +2272,16 @@ console.log(Math.round(Math.random() * 40)) // Antaa random numeron 0 - 40 väli
 ### Odotettu lopputulos
 
 ```js
-► {nimiA: 5, nimiB: "arvo", nimiC: {…}}
-5
-arvo
-► {nimiA: 100}
-undefined
-100
-abcd
-5/5 arvo
-► {nimiA: "arvo"}
-arvo
-► (3) [10, 20, 30]
-20
-undefined
-1
-uusi data
-muutettu data
-► (14) ["t", "ä", "m", "ä", " ", "o", "n", " ", "t", "e", "k", "s", "t", "i"]
-► (4) ["aaa", "aaa", "a", "aaa"]
-abc
-ke45o
-2
-9
-30
+Satunnainen numero 0 ja 1 välillä: 0.04905346196068461
+Satunnainen numero 0 ja 1 välillä: 0.1489215091801146
+Satunnainen numero 0 ja 1 välillä: 0.9877012773805818
+
+Pyöristää ylöspäin: 9 4
+Pyöristää alaspäin: 8 3
+Pyöristää lähimpään: 9 3 8
+
+Satunnainen numero 0-10 väliltä: 0.42996742660740495
+Satunnainen numero 1-2 väliltä: 2
+Satunnainen numero 0-1 väliltä: 1
+Satunnainen numero 0-2 väliltä: 1
 ```
