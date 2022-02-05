@@ -34,13 +34,14 @@
     - [Tehtävä 4.7 | Tekstistä etsimistä](#tehtävä-47--tekstistä-etsimistä)
     - [Tehtävä 4.8 | Pyramidin teko](#tehtävä-48--pyramidin-teko)
     - [Tehtävä 4.9 | Onton pyramidin teko](#tehtävä-49--onton-pyramidin-teko)
-  - [Tehtävä 5.0 | Opetus materiaalia .indexOf(), .toUpperCase(), .toLowerCase() ja pyöristys operaattoreista](#tehtävä-50--opetus-materiaalia-indexof-kirjainkoon-muutosta-ja-loopin-rikkomisesta)
+  - [Tehtävä 5.0 | Opetus materiaalia .indexOf(), kirjainkoon muutosta ja loopin rikkomisesta](#tehtävä-50--opetus-materiaalia-indexof-kirjainkoon-muutosta-ja-loopin-rikkomisesta)
     - [Tehtävä 5.1 | Tuplakirjainten löytäminen](#tehtävä-51--tuplakirjainten-löytäminen)
     - [Tehtävä 5.2 | Palindromin tunnistus](#tehtävä-52--palindromin-tunnistus)
     - [Tehtävä 5.3 | Isot alkukirjaimet](#tehtävä-53--isot-alkukirjaimet)
-  - [Tehtävä 6.0 | Taulut, objectit ja random numerot](#tehtävä-60--taulut-objectit-ja-random-numerot)
+  - [Tehtävä 6.0 | Pyöristys ja random numerot](#tehtävä-60--pyöristys-ja-random-numerot)
     - [Tehtävä 6.1 | Rajoitettu satunnaisuus](#tehtävä-61--rajoitettu-satunnaisuus)
     - [Tehtävä 6.2 | Salasanan luonti](#tehtävä-62--salasanan-luonti)
+  - [Tehtävä 7.0 | Taulut](#tehtävä-70--taulut)
 
 <br>
 
@@ -2401,3 +2402,84 @@ console.log("Luotu salasana:", salasana);
 ```
 
 </details>
+
+---
+
+<br>
+
+## Tehtävä 7.0 | Taulut
+
+### Selitykset
+
+- `Arrays` eli `taulut` ovat hyvin tärkeä ja kätevä tapa `tallentaa dataa`
+- Haet taulusta `index numerolla` datan
+  - Tämä on `samanlaista kun tekstistä`, eli käytät `[]` sulkeita jolla `haet datan`
+  - Jos `index` numerolla `ei ole dataa` palauttaa `undefind`
+- Saat `datan määrän` `length` komennolla
+  - Voit myös `asettaa` taulun `datan määrän tällä`
+- Voit `luoda` taulun `Array()` functiolla
+  - Sisälle voit laittaa `numeron`, miten `paljon dataa tauluun` haluisit
+- `.fill()` functio `täyttää` taulun haluamallasi `arvolla`
+
+### Opetus materiaali
+
+```js
+const teksti = "neljä";
+const taulu = ["yksi", 2, "kolme", teksti]; // Tämä on taulu
+// Voit tallentaa eri arvoja tähän ja erotat uuden arvon pilkulla
+
+console.log(taulu); // Taulun tulostus kertoo sen kaikki arvot
+
+// Voit myös hakea index numerolla tietyn datan taulusta
+console.log(taulu[0]) // Tämä hakee ensimmäisen tiedon, eli tekstin "yksi"
+console.log(taulu[10]) // Jos haet indexistä jota ei ole, dataa niin saat undefind
+console.log(taulu.length) // length komennolla näät paljon dataa taulussa on
+
+for(let i = 0; i < taulu.length; i++) {
+  console.log(`Index: ${i} taulusta:`, taulu[i]) // Voit tulostaa taulun kaiken datan näin!
+}
+
+// Jos haluat esim tietää taulun viimeisen tekstin pituuden tekisit näin
+console.log("Viimeisen sanan pituus:", taulu[taulu.length - 1].length);
+
+taulu[1] = "kaksi"; // Voit myös muuttaa taulun arvoja näin
+console.log("Taulun arvo muutettu", taulu[1]) // Tulostaa muutetun arvon taulusta
+
+taulu.length = 1; // Voit myös tyhjentää taulusta, muuttamalla sen pituutta
+console.log("Taulusta poistettu dataa", taulu) // Nytten taulussa on vain ensimmäinen arvo
+
+taulu[2] = ["arvo1", "arvo2"] // Asettaa taululle toisen arvon, joka on myös taulu
+// Eli taulun sisälle voi myös tallentaa tauluja
+// Huomaa että taulussa on yksi empty arvo, koska hyppäsin index 1 yli
+console.log(taulu);
+
+// Voit myös täyttää taulun tietyllä arvolla käyttämällä fill() functiota
+taulu.fill(123);
+console.log(taulu);
+
+const pitkäTaulu = Array(15) // Voit luoda Array() functiolla tietyn pituisen taulun
+console.log(pitkäTaulu); // Sisältää 15 tyhjää dataa, koska niitä ei ole asetettu
+console.log(pitkäTaulu.fill("#"))
+```
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+(4) ['yksi', 2, 'kolme', 'neljä']
+yksi
+undefined
+4
+Index: 0 taulusta: yksi
+Index: 1 taulusta: 2
+Index: 2 taulusta: kolme
+Index: 3 taulusta: neljä
+Viimeisen sanan pituus: 5
+Taulun arvo muutettu kaksi
+Taulusta poistettu dataa ['yksi']
+(3) ['yksi', empty, Array(2)]
+(3) [123, 123, 123]
+(15) [empty × 15]
+(15) ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#']
+```
