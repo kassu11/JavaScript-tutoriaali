@@ -2426,9 +2426,9 @@ console.log("Luotu salasana:", salasana);
 - `.join()` functio `yhdistää taulusi tekstiksi`
   - Voit kirjoittaa `function sisälle merkin` jolla haluat että `tiedot yhdistetään`
     - `Jos et määritä` mitään merkkiä, `oletuksena` tulee `,`
-    `Esim 1`. `[23, "abc"].join("q")` olisi `"23qabc"`
-    `Esim 2`. `[23, "abc"].join("")` olisi `"23abc"`
-    `Esim 2`. `[23, "abc"].join("-_-")` olisi `"23-_-abc"`
+    - `Esim 1` `[23, "abc"].join("q")` olisi `"23qabc"`
+    - `Esim 2` `[23, "abc"].join("")` olisi `"23abc"`
+    - `Esim 2` `[23, "abc"].join("-_-")` olisi `"23-_-abc"`
 - Voit `luoda` taulun `Array()` functiolla
   - Sisälle voit laittaa `numeron`, miten `paljon dataa tauluun` haluisit
 - `.fill()` functio `täyttää` taulun haluamallasi `arvolla`
@@ -2563,8 +2563,8 @@ console.log(Array(koko).fill(rivi).join("\n"));
 
 ### Tehtävänanto
 
-- Piirrä konsoliin shakkilaudan tyylinen ruutu kuvio
-- Kokoa voi säätää leveys ja korkeus oliolla
+- Piirrä konsoliin `shakkilaudan` tyylinen `ruutu kuvio`
+- Kokoa voi säätää `leveys` ja `korkeus` oliolla
 
 <br>
 
