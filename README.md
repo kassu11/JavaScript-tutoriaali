@@ -42,6 +42,9 @@
     - [Tehtävä 6.1 | Rajoitettu satunnaisuus](#tehtävä-61--rajoitettu-satunnaisuus)
     - [Tehtävä 6.2 | Salasanan luonti](#tehtävä-62--salasanan-luonti)
   - [Tehtävä 7.0 | Taulut](#tehtävä-70--taulut)
+    - [Tehtävä 7.1 | Täydellinen neliö v2](#tehtävä-71--täydellinen-neliö-v2)
+    - [Tehtävä 7.2 | Shakki lauta ruudukko](#tehtävä-72--shakki-lauta-ruudukko)
+    - [Tehtävä 7.3 | Digitaaliset numero sarjat](#tehtävä-73--digitaaliset-numero-sarjat)
 
 <br>
 
@@ -2417,6 +2420,15 @@ console.log("Luotu salasana:", salasana);
   - Jos `index` numerolla `ei ole dataa` palauttaa `undefind`
 - Saat `datan määrän` `length` komennolla
   - Voit myös `asettaa` taulun `datan määrän tällä`
+- `.indexOf()` toimii myös `tauluissa` ja on kätevä tapa `etsiä dataa`
+  - `Samanlailla kun tekstissä`, tämä palauttaa `etsimäsi asian index numeron`
+  - `Jos dataa ei löydy` palauttaa `-1`
+- `.join()` functio `yhdistää taulusi tekstiksi`
+  - Voit kirjoittaa `function sisälle merkin` jolla haluat että `tiedot yhdistetään`
+    - `Jos et määritä` mitään merkkiä, `oletuksena` tulee `,`
+    `Esim 1`. `[23, "abc"].join("q")` olisi `"23qabc"`
+    `Esim 2`. `[23, "abc"].join("")` olisi `"23abc"`
+    `Esim 2`. `[23, "abc"].join("-_-")` olisi `"23-_-abc"`
 - Voit `luoda` taulun `Array()` functiolla
   - Sisälle voit laittaa `numeron`, miten `paljon dataa tauluun` haluisit
 - `.fill()` functio `täyttää` taulun haluamallasi `arvolla`
@@ -2445,6 +2457,9 @@ console.log("Viimeisen sanan pituus:", taulu[taulu.length - 1].length);
 taulu[1] = "kaksi"; // Voit myös muuttaa taulun arvoja näin
 console.log("Taulun arvo muutettu", taulu[1]) // Tulostaa muutetun arvon taulusta
 
+const index = taulu.indexOf("neljä"); // Voit myös käyttää indexOf komentoa tauluissa :O
+console.log("Etsi indexOf() komennolla:", index, taulu[index]);
+
 taulu.length = 1; // Voit myös tyhjentää taulusta, muuttamalla sen pituutta
 console.log("Taulusta poistettu dataa", taulu) // Nytten taulussa on vain ensimmäinen arvo
 
@@ -2459,7 +2474,10 @@ console.log(taulu);
 
 const pitkäTaulu = Array(15) // Voit luoda Array() functiolla tietyn pituisen taulun
 console.log(pitkäTaulu); // Sisältää 15 tyhjää dataa, koska niitä ei ole asetettu
-console.log(pitkäTaulu.fill("#"))
+console.log(pitkäTaulu.fill("#"));
+
+console.log("Voit myös yhistää taulun tekstiksi:", taulu.join(" - "));
+// Kitjoitat functioon millä merkillä haluat yhdistää arvot
 ```
 
 <br>
@@ -2477,9 +2495,287 @@ Index: 2 taulusta: kolme
 Index: 3 taulusta: neljä
 Viimeisen sanan pituus: 5
 Taulun arvo muutettu kaksi
+Etsi indexOf() komennolla: 3 neljä
 Taulusta poistettu dataa ['yksi']
 (3) ['yksi', empty, Array(2)]
 (3) [123, 123, 123]
 (15) [empty × 15]
 (15) ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#']
+Voit myös yhistää taulun tekstiksi: 123 - 123 - 123
 ```
+
+---
+
+<br>
+
+## Tehtävä 7.1 | Täydellinen neliö v2
+
+### Tehtävänanto
+
+- Tee konsoliin neliö `o` kirjaimista
+- Neliön `riveillä` pitää erottaa `o` kirjaimet `väleillä`
+  - Eli `ei saa olla` näin: `oo`, vaan pitää olla: `o o`
+- Tehtävässä `ei` saa käyttää `.repeat()` functiota
+- Neliön `koko` määritetään `oliolla`
+  - Jos `olion arvo` on esim `5`, tulee neliön olla `5x5 kokoinen`
+  - `Välejä ei lasketa kokoon`, eli `5x5` `o kirjaimia`
+
+<br>
+
+### 3 Esimerkki tulosta
+
+```js
+o o
+o o
+
+o o o o
+o o o o
+o o o o
+o o o o
+
+o o o o o o o o
+o o o o o o o o
+o o o o o o o o
+o o o o o o o o
+o o o o o o o o
+o o o o o o o o
+o o o o o o o o
+o o o o o o o o
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const koko = 15;
+const rivi = Array(koko).fill("o").join(" ");
+
+console.log(Array(koko).fill(rivi).join("\n"));
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 7.2 | Shakki lauta ruudukko
+
+### Tehtävänanto
+
+- Piirrä konsoliin shakkilaudan tyylinen ruutu kuvio
+- Kokoa voi säätää leveys ja korkeus oliolla
+
+<br>
+
+### 3 Esimerkki tulosta
+
+```js
+Korkeus: 5   |       
+Leveys: 9    |    Korkeus: 3      
+ # # # #     |    Leveys: 15           
+# # # # #    |     # # # # # # #       
+ # # # #     |    # # # # # # # #      
+# # # # #    |     # # # # # # #        
+ # # # #     |          
+             |
+-------------+-------------------
+
+Korkeus: 10 
+Leveys: 33
+ # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # #
+ # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # #
+ # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # #
+ # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # #
+ # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # #
+```
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const korkeus = 10;
+const leveys = 33;
+const shakkiLauta = [];
+
+for(let y = 0; y < korkeus; y++) {
+  shakkiLauta[y] = ""; // Asettaa uuden rivin aina tyhjäksi
+  for(let x = 0; x < leveys; x++) {
+    if((y + x) % 2 == 0) shakkiLauta[y] += " ";
+    else shakkiLauta[y] += "#"; // Jos y + x ei ole parillinen, tulee #
+  }
+}
+
+console.log("Korkeus:", korkeus, "\nLeveys:", leveys);
+console.log(shakkiLauta.join("\n"));
+```
+
+</details>
+
+---
+
+<br>
+
+## Tehtävä 7.3 | Digitaaliset numero sarjat
+
+### Tehtävänanto
+
+- Tee `olio` johon tallennat haluamasi `numero sarjan`
+  - sarja `tulostetaan` konsoliin `digitaalisilla numeroilla`
+  - Jokeinen numero on `erotettu välilyönnillä toisistaan`
+- Digitaalisten numeroitten piirtämiseen `pitää käyttää tätä taulua`
+  - Tässä on kaikki numerot `0-9` laitettu:
+    ```js
+    const numerot = [
+      ["###", "# #", "# #", "# #", "###"],
+      [" # ", "## ", " # ", " # ", "###"],
+      ["###", "  #", "###", "#  ", "###"],
+      ["###", "  #", "###", "  #", "###"],
+      ["# #", "# #", "###", "  #", "  #"],
+      ["###", "#  ", "###", "  #", "###"],
+      ["###", "#  ", "###", "# #", "###"],
+      ["###", "  #", "  #", " # ", " # "],
+      ["###", "# #", "###", "# #", "###"],
+      ["###", "# #", "###", "  #", "###"]
+    ];
+    ```
+
+<br>
+
+### 4 Esimerkki tulosta
+
+```js
+Numerosarjasi oli: 234
+### ### # #
+  #   # # #
+### ### ###
+#     #   #
+### ###   #
+
+Numerosarjasi oli: 792120345
+### ### ###  #  ### ### ### # # ###
+  # # #   # ##    # # #   # # # #  
+  # ### ###  #  ### # # ### ### ###
+ #    # #    #  #   # #   #   #   #
+ #  ### ### ### ### ### ###   # ###
+
+Numerosarjasi oli: 1111111112
+ #   #   #   #   #   #   #   #   #  ###
+##  ##  ##  ##  ##  ##  ##  ##  ##    #
+ #   #   #   #   #   #   #   #   #  ###
+ #   #   #   #   #   #   #   #   #  #  
+### ### ### ### ### ### ### ### ### ###
+
+Numerosarjasi oli: 9
+###
+# #
+###
+  #
+###
+```
+
+<details>
+<summary>Vinkki 1</summary>
+
+- Jos sä laitat rivinvaihot näin, näet ne numerot selvemmin
+
+```js
+const numerot = [
+  ["###", "# #", "# #", "# #", "###"],
+  [" # ", "## ", " # ", " # ", "###"],
+  ["###", "  #", "###", "#  ", "###"],
+  [
+    "###", 
+    "  #", 
+    "###", 
+    "  #", 
+    "###"
+  ],
+  [
+    "# #", 
+    "# #", 
+    "###", 
+    "  #", 
+    "  #"
+  ],
+  ["###", "#  ", "###", "  #", "###"],
+  ["###", "#  ", "###", "# #", "###"],
+  ["###", "  #", "  #", " # ", " # "],
+  ["###", "# #", "###", "# #", "###"],
+  ["###", "# #", "###", "  #", "###"],
+];
+```
+
+</details>
+
+<details>
+<summary>Vinkki 2</summary>
+
+```js
+const numerot = [
+  ["###", "# #", "# #", "# #", "###"],
+  [" # ", "## ", " # ", " # ", "###"],
+  ["###", "  #", "###", "#  ", "###"],
+  ["###", "  #", "###", "  #", "###"],
+  ["# #", "# #", "###", "  #", "  #"],
+  ["###", "#  ", "###", "  #", "###"],
+  ["###", "#  ", "###", "# #", "###"],
+  ["###", "  #", "  #", " # ", " # "],
+  ["###", "# #", "###", "# #", "###"],
+  ["###", "# #", "###", "  #", "###"],
+];
+
+console.log(numerot[5].join("\n"));
+```
+
+<br>
+
+### Odotettu lopputulos
+
+```js
+###
+#  
+###
+  #
+###
+```
+
+</details>
+
+<details>
+<summary>Vastaus</summary>
+
+```js
+const luku = "123";
+const numerot = [
+  ["###", "# #", "# #", "# #", "###"],
+  [" # ", "## ", " # ", " # ", "###"],
+  ["###", "  #", "###", "#  ", "###"],
+  ["###", "  #", "###", "  #", "###"],
+  ["# #", "# #", "###", "  #", "  #"],
+  ["###", "#  ", "###", "  #", "###"],
+  ["###", "#  ", "###", "# #", "###"],
+  ["###", "  #", "  #", " # ", " # "],
+  ["###", "# #", "###", "# #", "###"],
+  ["###", "# #", "###", "  #", "###"],
+];
+
+const vastaus = [];
+for(let korkeus = 0; korkeus < 5; korkeus++) {
+  vastaus[korkeus] = [];
+  for(let i = 0; i < luku.length; i++) {
+    const valittuNumero = luku[i];
+    vastaus[korkeus][i] = numerot[valittuNumero][korkeus];
+  }
+  vastaus[korkeus] = vastaus[korkeus].join(" ");
+}
+
+console.log("Numerosarjasi oli:", luku + "\n" + vastaus.join("\n"));
+```
+
+</details>
