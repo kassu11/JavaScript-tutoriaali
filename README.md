@@ -243,13 +243,21 @@ let lukuB = 6;  // "let" ja "const" on uusia tapoja tehdä olioita, ja niitä ka
 const lukuC = 10; // "let" tallentaa olion tiedon, mutta sitä voi muuttaa myöhemmin, "const" ei anna sitä muuttaa
 
 console.log(lukuA + lukuB); // Näyttää konsolissa paljon on 2 + 6, eli 8
-console.log("Voit myös laittaa teksti tänne"); // Tämä tulee myös konsoliin
+console.log("Voit myös laittaa tekstiä tänne"); // Tämä tulee myös konsoliin
+console.log('Toinen tapa tehdä teksti'); // Tekstin voi määrittää lainaus- tai heittomerkillä
+console.log(`
+	Tämä syntaksi toimivat vaikka heittää välin :O
+`); // Tämä on myös toinen tapa tehdä tekstiä
+// Nämä ovat ainoat 3 tapaa tehdä tekstiä JavaScriptissä
 
 lukuA = 15; // Voit muuttaa oliolle annettua vastausta näin
 lukuB = 3;
 
 console.log("lukuA on nyt", lukuA) // Voit yhdistää tekstiä ja olioita
 console.log("lukuB on nyt" + lukuA) // "+" toimii myös, mutta ei luo väliä
+console.log(`A + B on ${lukuA + lukuB}`) // Tällä syntaksilla voit laittaa olioita tekstin mukaan
+// Muista vaan laittaa olio ${} väliin
+
 
 lukuA = lukuA + 50; // Voit myös tehdä näin, joka ei olisi mahdollista normaalissa matikassa
 console.log(lukuA);
@@ -266,13 +274,18 @@ lukuC = 4;  // Jos yrität muuttaa "lukuC", tulee error, koska olio luotiin "con
 
 ```js
 8
-Voit myös laittaa teksti tänne
+Voit myös laittaa tekstiä tänne
+Toinen tapa tehdä teksti
+
+	Tämä syntaksi toimivat vaikka heittää välin :O
+
 lukuA on nyt 15
 lukuB on nyt15
+A + B on 18
 65
 miten menee
 > Uncaught TypeError: Assignment to constant variable.
-    at code.js:26
+    at code.js:37
 ```
 
 ---
@@ -2516,6 +2529,7 @@ Voit myös yhistää taulun tekstiksi: 123 - 123 - 123
 - Neliön `riveillä` pitää erottaa `o` kirjaimet `väleillä`
   - Eli `ei saa olla` näin: `oo`, vaan pitää olla: `o o`
 - Tehtävässä `ei` saa käyttää `.repeat()` functiota
+- Tehtävässä ei myöskään saa käyttää `for` looppia
 - Neliön `koko` määritetään `oliolla`
   - Jos `olion arvo` on esim `5`, tulee neliön olla `5x5 kokoinen`
   - `Välejä ei lasketa kokoon`, eli `5x5` `o kirjaimia`
@@ -2625,7 +2639,7 @@ console.log(shakkiLauta.join("\n"));
 
 ### Tehtävänanto
 
-- Tee `olio` johon tallennat haluamasi `numero sarjan`
+- Tee `olio` johon tallennat haluamasi `numerosarjan`
   - sarja `tulostetaan` konsoliin `digitaalisilla numeroilla`
   - Jokeinen numero on `erotettu välilyönnillä toisistaan`
 - Digitaalisten numeroitten piirtämiseen `pitää käyttää tätä taulua`
